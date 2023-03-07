@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --light-grey: #e6e6e6;
+  --grey: #666262;
+  --blue: #0000ff;
+  --dark-blue: #31326f;
+  --light-blue: #005490;
+  --olive-green: #97971c;
+  --gold-yellow: #f2c60d;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  height: 40rem;
+  width: 40rem;
+  background: var(--gold-yellow);
+  @include flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.title {
+  color: var(--blue);
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.modal_btn {
+  padding: 1rem 2rem;
+  color: var(--olive-green);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.modal {
+  position: fixed;
+  @include flex;
+  height: 15rem;
+  width: 40rem;
+  background: var(--light-grey);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  display: none;
+  overflow: hidden;
+  transform: translateY(-15rem);
+  transition: 1s ease-in-out;
+  animation: hide 1s ease-out;
+
+  &.active {
+    animation: show 1s ease-in;
+    transform: translateY(0);
+  }
+
+  &.inactive{
+    transition: 1s ease-in-out;
+    animation: hide 1.5s ease-in;
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30rem);
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(-15rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.title_close-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.modal_title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.modal_para {
+  color: var(--grey);
+  font-size: 1.2rem;
+  text-align: justify;
+  padding: 1rem 2rem;
+  border-top: 0.1rem solid grey;
+}
+
+.close_btn {
+  cursor: pointer;
+  font-size: 2rem;
+  color: grey;
+}
