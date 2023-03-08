@@ -13,8 +13,13 @@ function palindrome() {
   const checkPalindrome = checkSpecial.split('').reverse().join('');
   const paraText = 'a Palindrome.';
 
-  resultPara.textContent =
-    checkSpecial === checkPalindrome
-      ? `${strToCheck} is ${paraText} `
-      : `${strToCheck} is NOT ${paraText}`;
+  if (strToCheck === '') {
+    resultPara.textContent = '';
+  } else {
+    resultPara.textContent =
+      checkSpecial === checkPalindrome
+        ? `${strToCheck} is ${paraText} `
+        : `${strToCheck} is NOT ${paraText}`;
+  }
 }
+
