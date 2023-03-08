@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --grey: #666262;
+  --dark-grey: #555555;
+  --bg-color: #e2e2e2;
+  --box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--bg-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  color: var(--dark-grey);
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 5rem;
+}
+
+.content{
+  @include flex;
+  margin-top: 4rem;
+  width: 100%;
+  gap: 1rem;
+
+}
+
+.text_check{
+  border-color: transparent transparent var(--dark-grey) transparent;
+  border-width: .1rem;
+  width: 15rem;
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  outline: none;
+  padding: .3rem;
+
+  &::placeholder{
+    font-size: 1.2rem;
+    color: var(--light-grey);
+
+    &:focus{
+      color: transparent;
+    }
+  }
+}
+
+.check_btn{
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: .3rem;
+  color: var(--dark-grey);
+  box-shadow: var(--box-shadow);
+}
+
+.result_text{
+  color: var(--dark-grey);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 3rem;
+  text-decoration: underline .5rem greenyellow;
+  text-underline-offset: .5rem;
+}
