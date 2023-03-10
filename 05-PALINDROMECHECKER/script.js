@@ -8,7 +8,7 @@ checkBtn.addEventListener('click', palindrome);
 
 // Define event listener function
 function palindrome() {
-  const strToCheck = wordToCheck.value;
+  const strToCheck = wordToCheck.value.toLowerCase();
   const checkSpecial = strToCheck.replace(/[^A-Za-z0-9]/g, '');
   const checkPalindrome = checkSpecial.split('').reverse().join('');
   const paraText = 'a Palindrome.';
