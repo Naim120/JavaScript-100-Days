@@ -2,9 +2,8 @@
 
 :root {
   --white: #fff;
-  --light-grey: #d4d4d4;
-  --dark-grey: #555555;
-  --bg-color: greenyellow;
+  --black: #000;
+  --bg-color: #002c8a;
   --greenyellow: greenyellow;
   --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
 }
@@ -35,59 +34,45 @@ body {
 
 .container {
   position: relative;
+  @include flex;
   height: 30rem;
   width: 30rem;
-  background: var(--dark-grey);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
 }
 
 .title {
-  color: var(--greenyellow);
+  color: var(--white);
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 3rem;
   padding-top: 0.3rem;
   text-transform: uppercase;
-}
-.text-container {
-  @include flex;
+  transform: translateY(-3rem);
 }
 
-#input-area {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: var(--box-shadow);
-  font-size: 1rem;
-  outline: none;
-  border: none;
-  overflow: auto;
-  margin: 0 auto;
-  resize: none;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: var(--dark-grey);
-}
-
-.wrapper-counter {
-  @include flex;
-  flex-direction: row;
-  justify-content: space-around;
-  justify-items: center;
-  padding-top: 0.8rem;
-  line-height: 1.5rem;
-}
-
-.word-count,
-.char-count {
-  font-size: 1.5rem;
+.connection-status{
+  position: relative;
   text-align: center;
-  color: var(--greenyellow);
+  @include flex;
+  height: 15rem;
+  width: 15rem;
+  border: .2rem solid var(--greenyellow);
+  border-radius: .3rem;
+  box-shadow: var(--box-shadow);
 }
 
-.word-text,
-.char-text {
-  font-size: 1.3rem;
-  color: var(--light-grey);
+.status-image{
+  font-size: 5rem;
 }
+
+.text-status{
+  font-size: 1.2rem;
+  line-height: 3rem;
+  text-align: center;
+  color: var(--white);
+}
+
+

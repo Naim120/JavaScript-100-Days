@@ -1,22 +1,16 @@
-// Define DOM Elements
-const inputArea = document.getElementById('input-area');
-const wordCount = document.querySelector('.word-count');
-const charCount = document.querySelector('.char-count');
-
-// Add event listener (keyup) to count characters
-inputArea.addEventListener('keyup', () => {
-  charCount.textContent = inputArea.value.length;
-});
-
-// Add event listener (input) to count words
-inputArea.addEventListener('input', getWordCount);
-
-// Define function to count words
-function getWordCount() {
-  if (inputArea.value === '') {
-    wordCount.textContent = 0;
-  } else {
-    totalWords = inputArea.value.match(/\w+/g).length;
-    wordCount.textContent = totalWords;
+const checkInternetStatus = async () => {
+  try {
+    const response = await fetch('https://i.ibb.co/0mrB1SJ/kfc-png-logo-4094.png');
+    return response.ok;
+  } catch (error) {
+    return false;
   }
-}
+};
+
+setInterval(async () => {
+  const connection = await checkInternetStatus();
+  const statusDisplay = document.querySelector('.text-status');
+  const statusImage = document.querySelector('.status-image');
+  statusImage.style.color = connection ? '#000' : '#b4b4b4';
+  statusDisplay.textContent = connection ? "You're online!" : "You're offline!";
+}, 2000);
