@@ -1,0 +1,52 @@
+// Import Bootstrap variables
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Override Bootstrap form styles
+.form-control {
+  border-radius: 0;
+  border-color: $gray-400;
+  &:focus {
+    box-shadow: none;
+    border-color: $primary;
+  }
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover {
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
+  }
+}
+
+// Add custom styles for form validation feedback
+.form-control:valid {
+  border-color: $success;
+}
+
+.form-control:invalid {
+  border-color: $danger;
+}
+
+.invalid-feedback {
+  display: none;
+  color: $danger;
+}
+
+.form-control:invalid ~ .invalid-feedback {
+  display: block;
+}
+
+// Add custom styles for error message
+.text-danger {
+  font-weight: bold;
+  color: $danger;
+  margin-top: 0.5rem;
+}
