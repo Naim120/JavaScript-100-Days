@@ -145,9 +145,10 @@ button:focus {
 }
 
 .congrats-msg{
-    color: var(--placeholder);
-    text-align: justify;
-    font-size: 1rem;
+    color: var(--black);
+    text-align: center;
+    font-size: .8rem;
+    padding-top: 1rem;
 }
 
 .quarter {

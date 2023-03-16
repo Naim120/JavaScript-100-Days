@@ -1,76 +1,80 @@
-// show a message with a type of the input
-function showMessage(input, message, type) {
-  // get the small element and set the message
+const form = document.querySelector('#signup');
+const NAME_REQUIRED = 'Please enter your name';
+const EMAIL_REQUIRED = 'Please enter your email';
+const EMAIL_INVALID = 'Please enter a valid email address';
+
+// Show a message with a type of the input
+function showMessage(input, message, isValid) {
   const msg = input.parentNode.querySelector('small');
   msg.innerText = message;
-  // update the class for the input
-  input.className = type ? 'success' : 'error';
-  return type;
+  input.className = isValid ? 'success' : 'error';
+  return isValid;
 }
 
+let isSubscribed = false;
+
+// Show an error message for an input
 function showError(input, message) {
   return showMessage(input, message, false);
 }
 
+// Show a success message for an input
 function showSuccess(input) {
   return showMessage(input, '', true);
 }
 
+// Check if an input has a value
 function hasValue(input, message) {
-  if (input.value.trim() === '') {
-    return showError(input, message);
-  }
-  return showSuccess(input);
+  return input.value.trim() === '' ? showError(input, message) : showSuccess(input);
 }
 
+// Validate email format
 function validateEmail(input, requiredMsg, invalidMsg) {
-  // check if the value is not empty
   if (!hasValue(input, requiredMsg)) {
     return false;
   }
-  // validate email format
-  const emailRegex =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = input.value.trim();
-  if (!emailRegex.test(email)) {
-    return showError(input, invalidMsg);
-  }
-  return true;
+  return emailRegex.test(email) ? showSuccess(input) : showError(input, invalidMsg);
 }
 
-const form = document.querySelector('#signup');
-
-const NAME_REQUIRED = 'Please enter your name';
-const EMAIL_REQUIRED = 'Please enter your email';
-const EMAIL_INVALID = 'Please enter a correct email address format';
-
-let isSubscribed = false;
-
+// Handle form submission
 form.addEventListener('submit', function (event) {
-  // stop form submission
   event.preventDefault();
 
-  // Check if subscribed and disable or do nothing once click again
+  // Check if already subscribed and disable
   if (isSubscribed) {
     return;
   }
 
-  // validate the form
-  let nameValid = hasValue(form.elements['name'], NAME_REQUIRED);
-  let emailValid = validateEmail(
-    form.elements['email'],
-    EMAIL_REQUIRED,
-    EMAIL_INVALID
-  );
-  // if valid, submit the form.
-  if (nameValid && emailValid) {
+  // Validate form inputs
+  const nameInput = form.elements['name'];
+  const emailInput = form.elements['email'];
+
+  const isNameValid = hasValue(nameInput, NAME_REQUIRED);
+  const isEmailValid = validateEmail(emailInput, EMAIL_REQUIRED, EMAIL_INVALID);
+
+  if (isNameValid && isEmailValid) {
     isSubscribed = true;
-    const isSuccess = document.querySelector('.success-msg');
+
+    // Show success message
     const successMsg = document.createElement('p');
     successMsg.classList.add('congrats-msg');
-    isSuccess.appendChild(successMsg);
     successMsg.textContent =
       'Congratulations on subscribing! You will now receive updates about our latest products and promotions. Thank you for your interest!';
+    const successContainer = document.querySelector('.success-msg');
+    successContainer.appendChild(successMsg);
+
+    // Reset form after 3 seconds and remove success message
+    setTimeout(function() {
+      form.reset();
+      successContainer.removeChild(successMsg);
+      isSubscribed = false;
+    }, 8000);
   }
+});
+
+// Reset subscribed state on form reset
+form.addEventListener('reset', function () {
+  isSubscribed = false;
 });
