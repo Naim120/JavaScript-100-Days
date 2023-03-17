@@ -85,29 +85,74 @@ function showScores() {
 
 let questions = [
   new Question(
-    'What does HTML stand for?',
-    ['JQuery', 'XHTML', 'CSS', 'HTML'],
-    'HTML'
+    'What is the result of 10 + "20"',
+    ['"1020"', '30', '"30"', 'NaN'],
+    '"1020"'
   ),
   new Question(
-    'What does CSS stand for?',
-    ['HTML', 'JQuery', 'CSS', 'XML'],
-    'CSS'
+    'What is the output of the following code snippet: console.log(typeof null);',
+    ['"null"', '"object"', '"undefined"', '"string"'],
+    '"object"'
   ),
   new Question(
     'Which is a JavaScript framework?',
-    ['React', 'Laravel', 'Django', 'Sass'],
-    'React'
+    [
+      'It can only be used to declare variables within a function',
+      ' It allows variable hoisting',
+      ' It is block-scoped',
+      'It is function-scoped',
+    ],
+    'It is block-scoped'
   ),
   new Question(
-    'Which is a backend language?',
-    ['PHP', 'HTML', 'React', 'All'],
-    'PHP'
+    'What does DOM stand for?',
+    [
+      'Document Object Model',
+      'Dynamic Object Module',
+      'Data Object Manager',
+      'Document Object Method',
+    ],
+    'Document Object Model'
   ),
   new Question(
-    'Which is best for Artificial Intelligence?',
-    ['React', 'Laravel', 'Python', 'Sass'],
-    'Python'
+    'Which of the following is not a primitive data type in JavaScript?',
+    ['string', 'number', 'boolean', 'array'],
+    'array'
+  ),
+  new Question(
+    'What is the difference between == and === operators?',
+    [
+      '== is strict equality, while === is loose equality',
+      '== is loose equality, while === is strict equality',
+      '== and === are the same',
+      '== is only used for numbers, while === is used for all data types',
+    ],
+    ' == is loose equality, while === is strict equality'
+  ),
+  new Question(
+    'What is the purpose of the continue statement in a loop?',
+    [
+      'To skip the current iteration of the loop',
+      'To break out of the loop',
+      'To start the loop again from the beginning',
+      'To run the loop only once',
+    ],
+    'To skip the current iteration of the loop'
+  ),
+  new Question(
+    'What is the output of the following code snippet: console.log("hello".length);',
+    ['"hello"', '4', '5', 'undefined'],
+    '5'
+  ),
+  new Question(
+    'Which keyword is used to declare a function in JavaScript?',
+    ['def', 'function', 'var', 'let'],
+    'function'
+  ),
+  new Question(
+    'Which method would you use to add an element to the end of an array?',
+    ['push()', 'pop()', 'shift()', 'unshift()'],
+    'push()'
   ),
 ];
 
