@@ -160,9 +160,6 @@ let quiz = new Quiz(questions);
 
 displayQuestion();
 
-
-// ============
-
 const TIME_LIMIT = 3; // in minutes
 const INTERVAL_DURATION = 1000; // in milliseconds
 const quizTimeInMinutes = TIME_LIMIT * 60;
@@ -187,36 +184,3 @@ document.getElementById('start-quiz').addEventListener('click', function() {
     }
   }, INTERVAL_DURATION);
 });
-
-
-// Countdown
-// const TIME_LIMIT = 3; // in minutes
-// const INTERVAL_DURATION = 1000; // in milliseconds
-// const quizTimeInMinutes = TIME_LIMIT * 60;
-// let quizTime = quizTimeInMinutes;
-
-// let counting = document.getElementById('count-down');
-
-// function startCountdown() {
-//   let quizTimer = setInterval(function () {
-//     if (quizTime <= 0) {
-//       clearInterval(quizTimer);
-//       showScores();
-//     } else {
-//       quizTime -= 1;
-//       let sec = Math.floor(quizTime % 60);
-//       let min = Math.floor(quizTime / 60);
-//       counting.innerHTML = `TIMER: ${min} : ${sec}`;
-//     }
-//   }, INTERVAL_DURATION);
-// }
-
-// startCountdown();
-
-// ---------------------------------------
-// Start Quiz
-// const quizEl = document.getElementById('quiz-wrapper');
-// const startQuizBtn = document.createElement('button');
-// startQuizBtn.classList('start-quiz');
-// startQuizBtn.textContent = 'Start Quiz';
-// quizEl.appendChild(startQuizBtn);
