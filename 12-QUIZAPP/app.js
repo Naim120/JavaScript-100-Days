@@ -51,7 +51,6 @@ function displayQuestion() {
       choiceEl.style.marginLeft = '0.5rem';
       guess(`btn${i}`, choices[i]);
     }
-
     showLevel();
   }
 }
@@ -71,7 +70,7 @@ function showLevel() {
 }
 
 function showScores() {
-  let quizEndHTML = `
+  const quizEndHTML = `
     <div class="quiz-completed-container">
       <h1 class="quiz-completed-title">Quiz Completed</h1>
       <h3 id="score">Your Score: ${quiz.score}/${quiz.questions.length}</h3>
@@ -79,10 +78,11 @@ function showScores() {
         <a href="index.html">Take Quiz Again</a>
       </div>
     </div>`;
-  let quizEl = document.getElementById('quiz-wrapper');
+  const quizEl = document.getElementById('quiz-wrapper');
   quizEl.innerHTML = quizEndHTML;
 }
 
+// Questions Obj
 let questions = [
   new Question(
     'What is the result of 10 + "20"',
@@ -160,16 +160,22 @@ let quiz = new Quiz(questions);
 
 displayQuestion();
 
-// Countdown
-const TIME_LIMIT = 10; // in minutes
+
+// ============
+
+const TIME_LIMIT = 3; // in minutes
 const INTERVAL_DURATION = 1000; // in milliseconds
 const quizTimeInMinutes = TIME_LIMIT * 60;
 let quizTime = quizTimeInMinutes;
 
 let counting = document.getElementById('count-down');
+let quizTimer;
 
-function startCountdown() {
-  let quizTimer = setInterval(function () {
+document.getElementById('start-quiz').addEventListener('click', function() {
+  // Hide the start-quiz button
+  document.getElementById('start-quiz').style.display = 'none';
+
+  quizTimer = setInterval(function () {
     if (quizTime <= 0) {
       clearInterval(quizTimer);
       showScores();
@@ -180,6 +186,37 @@ function startCountdown() {
       counting.innerHTML = `TIMER: ${min} : ${sec}`;
     }
   }, INTERVAL_DURATION);
-}
+});
 
-startCountdown();
+
+// Countdown
+// const TIME_LIMIT = 3; // in minutes
+// const INTERVAL_DURATION = 1000; // in milliseconds
+// const quizTimeInMinutes = TIME_LIMIT * 60;
+// let quizTime = quizTimeInMinutes;
+
+// let counting = document.getElementById('count-down');
+
+// function startCountdown() {
+//   let quizTimer = setInterval(function () {
+//     if (quizTime <= 0) {
+//       clearInterval(quizTimer);
+//       showScores();
+//     } else {
+//       quizTime -= 1;
+//       let sec = Math.floor(quizTime % 60);
+//       let min = Math.floor(quizTime / 60);
+//       counting.innerHTML = `TIMER: ${min} : ${sec}`;
+//     }
+//   }, INTERVAL_DURATION);
+// }
+
+// startCountdown();
+
+// ---------------------------------------
+// Start Quiz
+// const quizEl = document.getElementById('quiz-wrapper');
+// const startQuizBtn = document.createElement('button');
+// startQuizBtn.classList('start-quiz');
+// startQuizBtn.textContent = 'Start Quiz';
+// quizEl.appendChild(startQuizBtn);

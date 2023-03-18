@@ -6,6 +6,7 @@
   --trans-grey: rgba(255, 255, 255, 0.5);
   --dark-grey: #555555;
   --bg-color: rgb(140, 0, 175);
+  --purple: rgb(140, 0, 175);
   --light-purple: rgb(225, 160, 241);
   --dark-purple: rgb(94, 2, 94);
   --greenyellow: rgb(153, 255, 0);
@@ -57,7 +58,7 @@ body {
 #quiz-wrapper{
     height: 30rem;
     width: 30rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .quiz-header {
@@ -85,7 +86,7 @@ body {
   gap: 1rem;
 }
 
-.btn{
+.btn, #start-quiz{
   text-align: left;
   margin-left: 0 auto;
   padding: .8rem;
@@ -106,9 +107,19 @@ body {
 
   &:active{
     color: var(--white);
-    background:rgb(140, 0, 175);
+    background:var(--purple);
     transition: background-color .15s ease-in-out;
   }
+}
+
+#start-quiz{
+  padding: .5rem 0;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  background: var(--purple);
+  color: var(--white);
+  text-transform: uppercase;
 }
 
 #score{
@@ -142,7 +153,7 @@ body {
 .retake-quiz a{
   font-size: 1.2rem;
   color: var(--white);
-  background: var(--dark-purple);
+  background: var(--purple);
   padding: .5rem 1rem;
   border: none;
   outline: none;
