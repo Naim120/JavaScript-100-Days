@@ -82,8 +82,13 @@ function showScores() {
   quizEl.innerHTML = quizEndHTML;
 }
 
+
+
+
+
+// ==================================
 // Questions Obj
-let questions = [
+const questions = [
   new Question(
     'What is the result of 10 + "20"',
     ['"1020"', '30', '"30"', 'NaN'],
@@ -156,10 +161,11 @@ let questions = [
   ),
 ];
 
-let quiz = new Quiz(questions);
+const quiz = new Quiz(questions);
 
 displayQuestion();
 
+// Countdown Timer
 const TIME_LIMIT = 3; // in minutes
 const INTERVAL_DURATION = 1000; // in milliseconds
 const quizTimeInMinutes = TIME_LIMIT * 60;
@@ -171,6 +177,8 @@ let quizTimer;
 document.getElementById('start-quiz').addEventListener('click', function() {
   // Hide the start-quiz button
   document.getElementById('start-quiz').style.display = 'none';
+  // Enable option buttons
+  document.querySelectorAll('.btn').forEach(button => button.disabled = false);
 
   quizTimer = setInterval(function () {
     if (quizTime <= 0) {
