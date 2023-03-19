@@ -7,6 +7,22 @@ class Quiz {
   reset() {
     this.score = 0;
     this.questionIndex = 0;
+    this.shuffleQuestions();
+  }
+
+  shuffleQuestions() {
+    for (let i = this.questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
+      this.shuffleChoices(this.questions[i].choices);
+    }
+  }
+
+  shuffleChoices(choices) {
+    for (let i = choices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
   }
 
   getCurrentQuestion() {
@@ -80,13 +96,9 @@ function showScores() {
     </div>`;
   const quizEl = document.getElementById('quiz-wrapper');
   quizEl.innerHTML = quizEndHTML;
+  quiz.reset();
 }
 
-
-
-
-
-// ==================================
 // Questions Obj
 const questions = [
   new Question(
