@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #555555;
+  --bg-color: rgb(240, 72, 142);
+  --fuchsia: rgb(224, 33, 112);
+  --orange: #f38b03;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  @include flex;
+  height: 30rem;
+  width: 30rem;
+  background: var(--trans-grey);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  color: var(--white);
+}
+
+.quotes-wrapper {
+  @include flex;
+  height: 20rem;
+  width: 25rem;
+  padding: 0 1.5rem;
+  border: 0.1rem solid var(--light-grey);
+  background-color: transparent;
+  box-shadow: var(--box-shadow);
+}
+
+.quote-author {
+  color: var(--fuchsia);
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+}
+
+#get-quote-btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  color: var(--white);
+  background: var(--fuchsia);
+  box-shadow: var(--box-shadow);
+  transform: translateY(0);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--fuschia);
+    background: var(--light-grey);
+    box-shadow: var(--box-shadow);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+  }
+
+  &:active {
+    transform: translateY(0.1rem);
+  }
+}
