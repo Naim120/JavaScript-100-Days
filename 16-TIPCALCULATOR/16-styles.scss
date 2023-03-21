@@ -2,7 +2,7 @@
 
 :root {
   --white: #fff;
-  --light-grey: #d4d4d4;
+  --light-grey: #b9b9b9;
   --trans-grey: rgba(255, 255, 255, 0.5);
   --dark-grey: #444;
   --bg-color: #03596e;
@@ -45,8 +45,8 @@ body {
 .wrapper {
   @include flex;
   flex-direction: column;
-  height: 25rem;
-  width: 25rem;
+  height: 28rem;
+  width: 28rem;
   color: var(--dark-grey);
   border: 0.1rem solid var(--light-grey);
   background: transparent;
@@ -57,15 +57,14 @@ body {
 
 .title {
   font-size: 1.8rem;
-  padding-top: .5rem;
   text-transform: uppercase;
 }
 
 .amt-bill,
 .service-rate {
   @include flex;
-  gap: 5rem;
-  padding: 1rem;
+  gap: 6.5rem;
+  padding: 1rem 0;
   border-bottom: 0.1rem solid var(--bg-color);
 
   label {
@@ -76,8 +75,7 @@ body {
 
   #bill {
     outline: none;
-    padding: 0.5rem 1rem 0.5rem 0;
-    width: 15.5rem;
+    padding: .5rem 0.8rem;
     text-align: right;
     font-size: 1.2rem;
     font-weight: bold;
@@ -98,12 +96,12 @@ body {
 }
 
 .service-rate {
-  gap: 2.5rem;
-  padding: 0.5rem 1rem;
+  gap: 3.5rem;
+  padding: 0.5rem 0;
 }
 
 select {
-  padding: 0.5rem 2.3rem;
+  padding: 0.3rem 3.5rem;
   background: var(--light-grey);
   color: var(--dark-grey);
   font-size: 1.2rem;
@@ -120,8 +118,8 @@ option {
 .calculate-btn,
 .reset-btn {
   font-size: 1rem;
-  padding: 0.5rem 0em;
-  margin: 1rem auto;
+  padding: 0.5rem;
+  margin: 1rem 0 0 0;
   width: 100%;
   border: none;
   text-transform: uppercase;
@@ -141,6 +139,11 @@ option {
   &:active {
     transform: translateY(0.3rem);
   }
+}
+
+.note{
+  color: #d80404;
+  padding: 0;
 }
 
 .calculated-amount {

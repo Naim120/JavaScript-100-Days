@@ -1,37 +1,43 @@
 const billAmt = document.getElementById('bill');
 const serviceRate = document.getElementById('rate');
+const note = document.querySelector('.note');
 const calcBtn = document.querySelector('.calculate-btn');
 const tipValue = document.querySelector('.tip-value');
 const overallValue = document.querySelector('.total-value');
 const resetBtn = document.querySelector('.reset-btn');
 
-// Add event listener
+// Add event listeners
 calcBtn.addEventListener('click', getTotal);
 resetBtn.addEventListener('click', reset);
+serviceRate.addEventListener('change', checkRate);
 
-function getTotal() {
-  let totalTip = 0;
-  if (serviceRate.value === 'excellent') {
-    totalTip = billAmt.value * 0.15;
-  } else if (serviceRate.value === 'good') {
-    totalTip = billAmt.value * 0.1;
-  } else {
-    totalTip = billAmt.value * 0.05;
-  }
-
-  tipValue.innerHTML = `$ ${totalTip.toFixed(2)}`;
-  const overallBill = Number(billAmt.value) + totalTip;
-  overallValue.innerHTML = `$ ${overallBill.toFixed(2)}`;
+function checkRate() {
+  note.textContent = serviceRate.value === 'selection' ? 'Please enter the Bill Amount & Rate of Service' : '';
 }
 
-function formatInput() {
-  const oldBill = billAmt.value;
-  const formattedBill = parseFloat(oldBill).toFixed(2);
-  billAmt.value = `$ ${formattedBill}`;
+function getTotal() {
+  if (serviceRate.value === 'selection') {
+    note.textContent = 'Please enter the Bill Amount & Rate of Service';
+    return;
+  }
+
+  const rates = {
+    excellent: 0.15,
+    good: 0.1,
+    fair: 0.05,
+  };
+
+  const totalTip = billAmt.value * rates[serviceRate.value];
+  tipValue.textContent = `$ ${totalTip.toFixed(2)}`;
+
+  const overallBill = +billAmt.value + totalTip;
+  overallValue.textContent = `$ ${overallBill.toFixed(2)}`;
 }
 
 function reset() {
   billAmt.value = '0.00';
-  tipValue.innerHTML = '$ 0.00';
-  overallValue.innerHTML = '$ 0.00';
+  serviceRate.value = 'selection';
+  note.textContent = '';
+  tipValue.textContent = '$ 0.00';
+  overallValue.textContent = '$ 0.00';
 }
