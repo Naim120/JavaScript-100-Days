@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/16-styles.css" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h1 class="title">Tip Calculator</h1>
+        <div class="amt-bill">
+          <label for="bill">Bill:</label>
+          <input type="number" id="bill" step="0.01" value="0.00" />
+        </div>
+        <div class="service-rate">
+          <label for="rate">Service:</label>
+          <select name="rate" id="rate">
+            <option value="selection">--Select Rate--</option>
+            <option value="excellent">15% - Excellent</option>
+            <option value="good">10% - Good</option>
+            <option value="fair">5% - Fair</option>
+          </select>
+        </div>
+        <button class="calculate-btn">Calculate</button>
+        <div class="calculated-amount">
+          <div class="tip-amt">
+            <p class="tip-amt-text">Tip Amount:</p>
+            <span class="tip-value">$0.00</span>
+          </div>
+          <div class="overall-total">
+            <p class="total-amt-text">Total Amount:</p>
+            <span class="total-value">$0.00</span>
+          </div>
+        </div>
+        <button class="reset-btn">Reset</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
