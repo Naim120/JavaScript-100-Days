@@ -3,7 +3,7 @@
   --light-grey: #d4d4d4;
   --bg-color: #f38b03;
   --reflection-opacity: 0.2;
-  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 0 0.3rem rgba(0, 0, 0, .8);
 }
 
 *,
@@ -36,6 +36,28 @@ body {
   width: 30rem;
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
+
+  &::before{
+    position: absolute;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background: #000;
+    margin-top: -25rem;
+    border-radius: 50%;
+    box-shadow: -.1rem 0 .3rem var(--light-grey)
+  }
+
+  &::after{
+    position: absolute;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background: #000;
+    margin-top: 25rem;
+    border-radius: 50%;
+    box-shadow: 0 -.1rem .3rem var(--light-grey);
+  }
 }
 
 #clock {
@@ -52,7 +74,7 @@ body {
     content: attr(data-text);
     transform: rotateX(180deg) scaleZ(1.5);
     margin-top: 8.5rem;
-    line-height: 4.5rem;
+    line-height: 4rem;
     width: 100%;
     text-align: center;
     background-image: linear-gradient(
