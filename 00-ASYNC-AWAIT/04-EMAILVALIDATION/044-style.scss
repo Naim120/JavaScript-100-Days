@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --blue: #00009b;
+  --red: #bb0101;
+  --dark-grey: #555555;
+  --bg-color: #dadada;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--bg-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  @include flex;
+  height: 30rem;
+  width: 30rem;
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.email-wrapper {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: var(--dark-grey);
+  font-size: 1.2rem;
+}
+
+input[type='email'] {
+  width: 20rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: var(--white);
+  color: #000;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;;
+  margin-bottom: .5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.invalid-feedback {
+  display: none;
+  color: var(--white);
+}
+
+.invalid-feedback::before {
+  content: '* ';
+}
+
+.is-invalid + .invalid-feedback {
+  display: block;
+}
+
+.submit-btn {
+  background: var(--dark-grey);
+  color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-top: .8rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--white);
+    color: var(--dark-grey);
+    box-shadow: var(--box-shadow);
+    transition: all .15s ease-in-out;
+  }
+
+  &:active{
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    box-shadow: var(--box-shadow);
+    transition: all .15s ease-in-out;
+  }
+}
+
+.invalid-feedback{
+    color: var(--red);
+    font-size: 1rem;
+}
