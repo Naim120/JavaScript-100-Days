@@ -1,6 +1,6 @@
 async function getPosts(){
   try {
-    const resp = await fetch('https:jsonplaceholder.typicode.com/todos');
+    const resp = await fetch('https://jsonplaceholder.typicode.com/todos');
     const posts = await resp.json();
     return posts;
   } catch (error) {

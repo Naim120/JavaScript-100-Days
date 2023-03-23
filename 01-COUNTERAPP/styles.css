@@ -65,7 +65,7 @@ hr{
 }
 
 .dec,.reset,.inc{
-  padding: 1rem 1.5rem;
+  padding: .5rem .8rem;
   font-size: 2rem;
   border-radius: .3rem;
   background: var(--light-blue);

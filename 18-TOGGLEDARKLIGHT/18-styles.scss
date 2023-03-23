@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --bg-color: #6d6a6a;
+  --light-grey: #d6d6d6;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  --box-shadow-inset: inset -0.1rem 0 0.3rem rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='dark'] {
+  --color: #f0efef;
+  --background: #383737;
+  --secondary-bg: #41d9ff;
+  --title-color: yellowgreen;
+  --transition: all .15s ease-in-out;
+}
+
+html[data-theme='light'] {
+  --background: #f0efef;
+  --color: #383737;
+  --secondary-bg: #03596e;
+  --title-color: #6d6a6a;
+  --transition: all .15s ease-in-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  @include flex;
+  flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  background: var(--secondary-bg);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+input[type='checkbox'] {
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: var(--box-shadow-inset);
+}
+
+.fa-moon,
+.fa-sun {
+  font-size: 1rem;
+  background: var(--light-grey);
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 50%;
+}
+
+.fa-sun {
+  background: var(--background);
+  color: var(--color);
+}
+
+.fas {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  height: 28rem;
+  width: 28rem;
+  border-radius: 0.5rem;
+  color: var(--color);
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  text-align: right;
+  font-weight: 300;
+  padding: 0.5rem;
+  margin-top: -3.5rem;
+  text-transform: uppercase;
+  color: var(--title-color);
+  letter-spacing: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 0.8rem;
+}
+
+.article {
+  @include flex;
+  gap: 1rem;
+}
+
+.image {
+  height: 25vh;
+  object-fit: cover;
+  padding-left: 1rem;
+}
+
+.content {
+  font-size: 0.8rem;
+  text-align: justify;
+  padding: 1rem 1rem 0 0;
+}

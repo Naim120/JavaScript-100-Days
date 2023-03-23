@@ -9,16 +9,18 @@ closeBtn.addEventListener('click', hideModal);
 
 // Define event listener functions
 function showModal() {
-    modal.classList.add('active');
+  modal.classList.add('active');
   modal.classList.remove('inactive');
-  modal.style.display = 'block';
+  // modal.style.display = 'block';
+  setTimeout(() => {
+    modal.style.display = 'block';
+  }, 500);
 }
 
-function hideModal(){
-    modal.classList.remove('active');
+function hideModal() {
+  modal.classList.remove('active');
   modal.classList.add('inactive');
   setTimeout(() => {
     modal.style.display = 'none';
-  }, 1000);
+  }, 800);
 }
-

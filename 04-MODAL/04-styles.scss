@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html{
+  font-size: 62.5%
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -86,7 +90,7 @@ body {
   animation: hide 1s ease-out;
 
   &.active {
-    animation: show 1s ease-in;
+    animation: show .5s ease-in;
     transform: translateY(0);
   }
 

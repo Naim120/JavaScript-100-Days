@@ -26,3 +26,4 @@ function countVowel() {
       ? ''
       : (resultPara.textContent = `${strToCheck} has ${vowelCount} ${vowelWord}.`);
 }
+

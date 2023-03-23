@@ -24,17 +24,18 @@ convertBtn.addEventListener('click', convertToRoman);
 
 // Define function for conversion
 
-function convertToRoman() {
-  numValue = number.value;
+function convertToRoman() { // 6
+  numValue = number.value; // 6
   let romanNumerals = '';
   for (let i = 0; i < intAndArabic.length; i++) {
-    if (intAndArabic[i].intNum <= numValue) {
-      numValue = numValue - intAndArabic[i].intNum;
-      romanNumerals = romanNumerals + intAndArabic[i].roman;
+    if (intAndArabic[i].intNum <= numValue) { // <=numValue is 5 true
+      numValue = numValue - intAndArabic[i].intNum; //6 - 5 = 1
+      romanNumerals = romanNumerals + intAndArabic[i].roman; // V+I = VI
       i--;
     }
   }
 
+  // Assign converted number to DOM Element
   convertText.textContent =
     number.value === '' || number.value === '0'
       ? ''
