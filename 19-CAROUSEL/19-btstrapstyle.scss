@@ -1,9 +1,29 @@
-.carousel {
-    max-height: 30rem;
-    max-width: 30rem;
-    overflow: hidden;
- }
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .carousel-inner > .item > img {
-     margin: 0 auto;
- }
+body {
+  @include flex;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  @include flex;
+}
+
+.carousel {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+  width: 30rem;
+  overflow: hidden;
+}
+
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
