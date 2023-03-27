@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #555555;
+  --bg-color: #555555;
+  --orangered: orangered;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 30rem;
+  width: 30rem;
+  background: var(--trans-grey);
+  box-shadow: var(--box-shadow);
+}
+
+.header-container {
+  position: relative;
+  @include flex;
+  gap: 5%;
+  height: 4rem;
+  width: 100%;
+  background: var(--light-grey);
+}
+
+.logo {
+  color: var(--orangered);
+  font-size: 2rem;
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.nav-list {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+
+  & a {
+    color: var(--dark-grey);
+    box-shadow: var(--box-shadow);
+  }
+
+  & a:link {
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: 500;
+    padding: 0.5rem;
+  }
+
+  & a:hover, & a:active {
+    background: var(--white);
+    color: var(--orangered);
+  }
+}
+
+.main-content {
+  padding: 1rem 2rem;
+  height: 26rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.home-title {
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: -2rem;
+}
+
+section {
+  transition: all 0.15s ease-in-out;
+}
+
+.content {
+  @include flex;
+  gap: 0.5rem;
+}
+
+img {
+  object-fit: cover;
+  height: 15rem;
+  width: 15rem;
+  border: 0.1rem solid var(--white);
+}
+
+.para {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: justify;
+  padding-bottom: 1rem;
+}
