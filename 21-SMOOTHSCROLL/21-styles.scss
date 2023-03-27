@@ -2,8 +2,8 @@
 
 :root {
   --white: #fff;
+  --trans-white: rgba(255, 255, 255, 0.5);
   --light-grey: #d4d4d4;
-  --trans-grey: rgba(255, 255, 255, 0.5);
   --dark-grey: #555555;
   --bg-color: #555555;
   --orangered: orangered;
@@ -36,7 +36,7 @@ body {
 .container {
   height: 30rem;
   width: 30rem;
-  background: var(--trans-grey);
+  background: var(--trans-white);
   box-shadow: var(--box-shadow);
 }
 
@@ -80,7 +80,8 @@ li {
     padding: 0.5rem;
   }
 
-  & a:hover, & a:active {
+  & a:hover,
+  & a:active {
     background: var(--white);
     color: var(--orangered);
   }
@@ -91,6 +92,27 @@ li {
   height: 26rem;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: orangered;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--light-grey);
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--white);
 }
 
 .home-title {
@@ -122,6 +144,7 @@ img {
   height: 15rem;
   width: 15rem;
   border: 0.1rem solid var(--white);
+  box-shadow: var(--box-shadow);
 }
 
 .para {
