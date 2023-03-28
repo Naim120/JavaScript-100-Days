@@ -17,19 +17,17 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: var(--bg-color);
-  font-family: 'Open Sans', sans-serif;
-}
-
 @mixin flex {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  @include flex;
+  min-height: 100vh;
+  color: var(--bg-color);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {

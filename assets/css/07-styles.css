@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --white: #fff;
+  --red: #eb2d2d;
+  --light-grey: #b4b4b4;
+  --dark-grey: #4d4d4d;
+  --light-grey: #e2e2e2;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: var(--red);
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  background: var(--light-grey);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.title {
+  color: var(--dark-grey);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.coupon-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 12rem;
+  width: 28rem;
+  background: var(--white);
+  border-radius: 0.5rem;
+  justify-self: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 3rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.coupon-card::after {
+  position: absolute;
+  content: '';
+  height: 3rem;
+  width: 3rem;
+  background: var(--light-grey);
+  border-radius: 50%;
+  margin-left: -4rem;
+}
+
+.deal-img {
+  height: 8rem;
+  width: 10rem;
+  border-color: transparent var(--dark-grey) transparent transparent;
+  border-width: .3rem;
+  border-style: dotted;
+  margin-top: -2rem;
+}
+
+.deal-img .kfc-img {
+  height: 6rem;
+  width: 6rem;
+  -webkit-transform: translate(1rem, 0.5rem);
+          transform: translate(1rem, 0.5rem);
+}
+
+.deal-content {
+  margin-top: -2rem;
+  line-height: 2rem;
+}
+
+.deal-content .deal-title, .deal-content .deal-discount {
+  font-size: 1.5rem;
+}
+
+.deal-content .deal-text {
+  font-size: 1rem;
+}
+
+.discount-copy {
+  position: absolute;
+  margin: 8rem 0 0 -2.5rem;
+}
+
+.discount-copy .copycode {
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  width: 19rem;
+  border: 0.1rem solid var(--light-grey);
+  outline: none;
+  border-radius: .5rem 0 0 .5rem;
+}
+
+.discount-copy .copy-btn {
+  padding: .5rem 0;
+  width: 8rem;
+  text-align: center;
+  border: none;
+  color: var(--light-grey);
+  border-radius: 0 .5rem .5rem 0;
+  background: var(--red);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=07-styles.css.map */

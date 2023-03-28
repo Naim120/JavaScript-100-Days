@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --white: #fff;
+  --black: #000;
+  --bg-color: #002c8a;
+  --greenyellow: greenyellow;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.title {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 3rem;
+  padding-top: 0.3rem;
+  text-transform: uppercase;
+  -webkit-transform: translateY(-3rem);
+          transform: translateY(-3rem);
+}
+
+.connection-status {
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 15rem;
+  width: 15rem;
+  border: 0.2rem solid var(--greenyellow);
+  border-radius: .3rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.status-image {
+  font-size: 5rem;
+}
+
+.text-status {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  text-align: center;
+  color: var(--white);
+}
+/*# sourceMappingURL=09-styles.css.map */

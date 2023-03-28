@@ -1,6 +1,8 @@
+// DOM Elements
 const toggleMode = document.querySelector('input');
 const htmlEl = document.documentElement;
 
+// Add event listener and functionality
 toggleMode.addEventListener('click', () => {
   const theme = toggleMode.checked ? 'light' : 'dark';
   htmlEl.dataset.theme = theme;
@@ -8,6 +10,9 @@ toggleMode.addEventListener('click', () => {
   toggleMode.classList.toggle('fa-moon');
 });
 
-// The setAttribute method has been replaced with the dataset property to set the data-theme attribute. Additionally, the classList.remove and classList.add methods have been replaced with the classList.toggle method which toggles the presence of a class based on the checkbox state. Finally, the ternary operator has been adjusted to ensure that the theme variable is set correctly based on the checkbox state.
-
-
+// Set default theme based on user preference or system preference
+const defaultTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+htmlEl.dataset.theme = defaultTheme;
+toggleMode.checked = defaultTheme === 'light';
+toggleMode.classList.toggle('fa-sun', defaultTheme === 'dark');
+toggleMode.classList.toggle('fa-moon', defaultTheme === 'light');

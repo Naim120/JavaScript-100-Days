@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --grey: #383737;
+  --orange: #ff4500;
+  --bg-color: rgba(255, 255, 255, 0.8);
+  --box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.6);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  gap: 1rem;
+  margin-top: 0;
+  background: var(--bg-color);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  height: 5rem;
+  width: 100%;
+  padding: 0 3rem;
+  margin-top: -1.25rem;
+  background: transparent;
+  border-bottom: 0.5rem solid var(--orange);
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--orange);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#lang-select {
+  padding: .3rem 1.2rem;
+  border: 0.1rem solid var(--orange);
+  color: var(--orange);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.msg {
+  padding: 0 3rem;
+  border-bottom: 0.5rem solid var(--orange);
+}
+
+.para-text {
+  font-size: .7rem;
+  text-align: justify;
+  font-weight: 300;
+  padding-bottom: .5rem;
+}
+
+.bible-ref {
+  height: 3rem;
+  font-size: .8rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=022-style.css.map */

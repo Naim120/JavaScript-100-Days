@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 *,
 ::before,
 ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -33,38 +33,53 @@ html[data-theme='light'] {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   background-color: var(--bg-color);
   font-family: 'Poppins', sans-serif;
 }
 
-@mixin flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .container {
   position: relative;
-  @include flex;
-  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 30rem;
   width: 30rem;
   gap: 1rem;
   border-radius: 0.5rem;
   background: var(--secondary-bg);
-  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 input[type='checkbox'] {
   position: relative;
   -webkit-appearance: none;
-  appearance: none;
-  box-shadow: var(--box-shadow-inset);
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-box-shadow: var(--box-shadow-inset);
+          box-shadow: var(--box-shadow-inset);
 }
 
 .fa-moon,
@@ -96,7 +111,8 @@ input[type='checkbox'] {
   border-radius: 0.5rem;
   color: var(--color);
   background: var(--background);
-  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
 }
 
 .title {
@@ -112,14 +128,22 @@ input[type='checkbox'] {
 }
 
 .article {
-  @include flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1rem;
 }
 
 .image {
-  // height: 25vh;
   height: 17rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding-left: 1rem;
 }
 
@@ -128,3 +152,4 @@ input[type='checkbox'] {
   text-align: justify;
   padding: 1rem 1rem 0 0;
 }
+/*# sourceMappingURL=18-styles.css.map */

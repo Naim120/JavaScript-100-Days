@@ -1,4 +1,4 @@
-
+const apiKey = 'XXX';
 const langSelect = document.querySelector('#lang-select');
 const translateText = document.querySelector('.translate');
 const text = translateText.textContent.trim();
@@ -18,9 +18,7 @@ async function translateTextFunc(text, targetLang) {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const translatedText = await translateTextFunc(text, langSelect.value);
-    const titleTranslatedText = await translateTextFunc(text, langSelect.value);
     translateText.innerHTML = `<p class="para-text translate">${translatedText}</p>`;
-    titleTranslatedText.innerHTML = `<h1 class="title translate">${titleTranslatedText}</h1>`;
   } catch (error) {
     console.error(error);
   }

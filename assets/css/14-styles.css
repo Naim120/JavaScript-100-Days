@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #555555;
+  --bg-color: #f0488e;
+  --fuchsia: #e02170;
+  --orange: #f38b03;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  background: var(--trans-grey);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  color: var(--white);
+}
+
+.quotes-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 20rem;
+  width: 25rem;
+  padding: 0 1.5rem;
+  border: 0.1rem solid var(--light-grey);
+  background-color: transparent;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.quote-author {
+  color: var(--fuchsia);
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+}
+
+#get-quote-btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  color: var(--white);
+  background: var(--fuchsia);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  cursor: pointer;
+}
+
+#get-quote-btn:hover {
+  color: var(--fuschia);
+  background: var(--light-grey);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+
+#get-quote-btn:active {
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}
+/*# sourceMappingURL=14-styles.css.map */

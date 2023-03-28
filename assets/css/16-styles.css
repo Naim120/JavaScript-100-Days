@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --white: #fff;
+  --light-grey: #b9b9b9;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #444;
+  --bg-color: #03596e;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30rem;
+  width: 30rem;
+  background: var(--trans-grey);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 28rem;
+  width: 28rem;
+  color: var(--dark-grey);
+  border: 0.1rem solid var(--light-grey);
+  background: transparent;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.amt-bill,
+.service-rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 6.5rem;
+  padding: 1rem 0;
+  border-bottom: 0.1rem solid var(--bg-color);
+}
+
+.amt-bill label,
+.service-rate label {
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: 300;
+}
+
+.amt-bill #bill,
+.service-rate #bill {
+  outline: none;
+  padding: .5rem 0.8rem;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  color: var(--dark-grey);
+  background: var(--light-grey);
+}
+
+.amt-bill input[type='number'],
+.service-rate input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.amt-bill input::-webkit-outer-spin-button,
+.amt-bill input::-webkit-inner-spin-button,
+.service-rate input::-webkit-outer-spin-button,
+.service-rate input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.service-rate {
+  gap: 3.5rem;
+  padding: 0.5rem 0;
+}
+
+select {
+  padding: 0.3rem 3.5rem;
+  background: var(--light-grey);
+  color: var(--dark-grey);
+  font-size: 1.2rem;
+  border: none;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+option {
+  background: var(--bg-color);
+  color: var(--light-grey);
+}
+
+.calculate-btn,
+.reset-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem 0 0 0;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  background: var(--bg-color);
+  color: var(--light-grey);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.calculate-btn:hover,
+.reset-btn:hover {
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.calculate-btn:active,
+.reset-btn:active {
+  -webkit-transform: translateY(0.3rem);
+          transform: translateY(0.3rem);
+}
+
+.note {
+  color: #d80404;
+  padding: 0;
+}
+
+.calculated-amount {
+  width: 100%;
+}
+
+.tip-amt,
+.overall-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--dark-grey);
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.tip-amt-text,
+.total-amt-text {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.tip-value,
+.total-value {
+  height: 2rem;
+  width: 12rem;
+  background: var(--light-grey);
+  text-align: right;
+  font-weight: 500;
+  padding-right: 1rem;
+}
+/*# sourceMappingURL=16-styles.css.map */

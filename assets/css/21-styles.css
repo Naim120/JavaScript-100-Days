@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
   --white: #fff;
   --trans-white: rgba(255, 255, 255, 0.5);
@@ -15,35 +14,45 @@
 ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   background-color: var(--trans-white);
   font-family: 'Poppins', sans-serif;
-}
-
-@mixin flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
   height: 30rem;
   width: 30rem;
   background: var(--trans-white);
-  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
   border-bottom: 1rem solid black;
 }
 
 .header-container {
   position: relative;
-  @include flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 5%;
   height: 4rem;
   width: 100%;
@@ -57,9 +66,14 @@ body {
 }
 
 .nav-list {
+  position: -webkit-sticky;
   position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.2rem;
   text-decoration: none;
 }
@@ -67,25 +81,27 @@ body {
 li {
   list-style: none;
   text-decoration: none;
+  -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
+}
 
-  & a {
-    color: var(--dark-grey);
-    box-shadow: var(--box-shadow);
-  }
+li a {
+  color: var(--dark-grey);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
 
-  & a:link {
-    text-decoration: none;
-    color: var(--dark-grey);
-    font-weight: 500;
-    padding: 0.5rem;
-  }
+li a:link {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-weight: 500;
+  padding: 0.5rem;
+}
 
-  & a:hover,
-  & a:active {
-    background: var(--white);
-    color: var(--orangered);
-  }
+li a:hover,
+li a:active {
+  background: var(--white);
+  color: var(--orangered);
 }
 
 .main-content {
@@ -134,20 +150,31 @@ li {
 }
 
 section {
+  -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
 
 .content {
-  @include flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.5rem;
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 15rem;
   width: 15rem;
   border: 0.1rem solid var(--white);
-  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
 }
 
 .para {
@@ -156,3 +183,4 @@ img {
   text-align: justify;
   padding-bottom: 1rem;
 }
+/*# sourceMappingURL=21-styles.css.map */

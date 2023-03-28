@@ -1,5 +1,9 @@
-const links = document.querySelectorAll('.nav-list li a');
+// Animate On Scroll
+AOS.init({
+  duration: 1000,
+});
 
+const links = document.querySelectorAll('.nav-list li a');
 for (const link of links) {
   link.addEventListener('click', smoothScroll);
 }
@@ -10,3 +14,4 @@ function smoothScroll(e) {
   const targetEl = document.querySelector(linkRef);
   targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+

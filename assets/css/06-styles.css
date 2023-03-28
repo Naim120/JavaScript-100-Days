@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+:root {
+  --white: #fff;
+  --greenyellow: #adff2f;
+  --orange: #ff7b00;
+  --light-grey: #b4b4b4;
+  --bg-color: #af007b;
+  --light-grey: #e2e2e2;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  color: var(--light-grey);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+  background: var(--bg-color);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.title {
+  color: var(--greenyellow);
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 5rem;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4rem;
+  width: 100%;
+  gap: 1rem;
+}
+
+.text_check {
+  border-color: transparent transparent var(--orange) transparent;
+  border-width: .1rem;
+  width: 20rem;
+  font-size: 1.5rem;
+  color: var(--light-grey);
+  outline: none;
+  padding: .3rem;
+  background: transparent;
+}
+
+.text_check::-webkit-input-placeholder {
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+.text_check:-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+.text_check::-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+.text_check::placeholder {
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+.text_check::-webkit-input-placeholder:focus {
+  color: transparent;
+}
+
+.text_check:-ms-input-placeholder:focus {
+  color: transparent;
+}
+
+.text_check::-ms-input-placeholder:focus {
+  color: transparent;
+}
+
+.text_check::placeholder:focus {
+  color: transparent;
+}
+
+.check_btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 0.1rem solid var(--orange);
+  border-radius: .3rem;
+  color: var(--light-grey);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.check_btn:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.result_text {
+  color: var(--light-grey);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  -webkit-text-decoration: underline 0.5rem var(--greenyellow);
+          text-decoration: underline 0.5rem var(--greenyellow);
+  text-underline-offset: .5rem;
+}
+/*# sourceMappingURL=06-styles.css.map */
