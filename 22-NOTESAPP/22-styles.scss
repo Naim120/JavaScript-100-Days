@@ -1,0 +1,129 @@
+
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #555555;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  height: 30rem;
+  width: 30rem;
+  background: var(--trans-grey);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.navbar{
+    height: 2.5rem;
+}
+
+.title{
+    font-size: 1.3rem;
+}
+
+.note-name{
+    font-size: 1rem;
+    padding-top: .5rem;
+}
+
+.add-note-form{
+    @include flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+input[type=text]{
+    font-size: 1rem;
+    width: 95%;
+    padding: .3rem;
+}
+
+.textarea-note{
+    padding: .3rem;
+    width: 95%;
+    resize: none;
+}
+
+#add-btn{
+    border: .1rem solid var(--dark-grey);
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    border-radius: .3rem;
+}
+
+.notes-header{
+    @include flex;
+    justify-content: space-between;
+    margin: -1rem 0;
+}
+
+.clearAll{
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    border: .1rem solid var(--dark-grey);
+    border-radius: .3rem;
+}
+
+.note{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -1.5rem auto;
+
+}
+
+.note-cta-text{
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    margin-top: 1rem;
+    text-align: center;
+    border-radius: .3rem;
+    background: #000;
+}
+
+.cta-btns{
+    @include flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: .8rem;
+
+}
+
+.note-btn{
+    padding: .3rem 1rem;
+    border: .1rem solid var(--dark-grey);
+    border-radius: .3rem;
+}
+
+#add-note-title, .your-note-title{
+    font-size: 1rem;
+}
+
+.your-note-text{
+    font-size: .8rem;
+}

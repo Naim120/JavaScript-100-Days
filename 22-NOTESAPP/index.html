@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/22-styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/7d534dd6bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Note App</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container">
+            <h1 class="text-light title text-center">Smart Notes</h1>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="container section-container">
+          <!-- Form Container -->
+          <div class="form-container">
+            <h2 class="add note-name">Add Note</h2>
+            <hr />
+            <form class="add-note-form">
+              <input
+                type="text"
+                id="add-note-title"
+                placeholder="Title"
+                data-id="0"
+              />
+              <textarea
+                class="textarea-note"
+                name="notes"
+                id="note-text"
+                cols="50"
+                rows="3"
+                data-id="0"
+                placeholder="Notes"
+              ></textarea>
+              <button id="add-btn">Add Note</button>
+            </form>
+          </div>
+          <!-- Notes Container -->
+          <div class="notes-container">
+            <div class="container">
+              <hr />
+              <div class="notes-header">
+                <h2 class="add note-name">Your Notes</h2>
+                <button class="clearAll note-btn">Delete All</button>
+              </div>
+              <hr />
+              <div id="notes">
+                <div class="note">
+                  <p class="note-cta-text text-light">Note 1</p>
+                  <div class="cta-btns note-cta-btn">
+                    <button class="clear note-btn">
+                      <i class="fas fa-trash"></i> Delete
+                    </button>
+                    <button class="edit note-btn">
+                      <i class="fas fa-edit"></i> Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h3 class="your-note-title"></h3>
+              <p class="your-note-text"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
