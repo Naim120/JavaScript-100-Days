@@ -1,14 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
   --white: #fff;
   --light-grey: #d4d4d4;
   --trans-grey: rgba(255, 255, 255, 0.5);
   --dark-grey: #555555;
-  --bg-color: #8c00af;
-  --purple: #8c00af;
-  --light-purple: #e1a0f1;
-  --dark-purple: #5e025e;
-  --greenyellow: #99ff00;
   --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
 }
 
@@ -33,7 +27,6 @@ body {
           align-items: center;
   min-height: 100vh;
   background-color: var(--bg-color);
-  font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
@@ -43,15 +36,21 @@ body {
   border-radius: 0.5rem;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.navbar {
+  height: 2.5rem;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  padding-left: .3rem;
 }
 
 .note-name {
-  font-size: 1.2rem;
-  padding: .5rem 0 0 0;
+  font-size: 1rem;
+  padding-top: .5rem;
 }
 
 .add-note-form {
@@ -64,27 +63,106 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: .5rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: .5rem;
 }
 
 input[type=text] {
   font-size: 1rem;
-  width: 100%;
+  width: 95%;
   padding: .3rem;
 }
 
 .textarea-note {
   padding: .3rem;
-  width: 100%;
+  width: 95%;
   resize: none;
 }
 
 #add-btn {
   border: 0.1rem solid var(--dark-grey);
   padding: .3rem 1rem;
+  font-size: .8rem;
+  border-radius: .3rem;
+}
+
+.notes-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: -1rem 0;
+}
+
+.clearAll {
+  padding: .3rem 1rem;
+  font-size: .8rem;
+  border: 0.1rem solid var(--dark-grey);
+  border-radius: .3rem;
+}
+
+.note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: -1.5rem auto;
+}
+
+.note-cta-text {
+  padding: .3rem 1rem;
+  font-size: .8rem;
+  margin-top: 1rem;
+  text-align: center;
+  border-radius: .3rem;
+  background: #000;
+}
+
+.cta-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  font-size: .8rem;
+}
+
+.note-btn {
+  padding: .3rem 1rem;
+  border: 0.1rem solid var(--dark-grey);
+  border-radius: .3rem;
+}
+
+#add-note-title, .your-note-title {
+  font-size: 1rem;
+}
+
+.your-note-text {
+  font-size: .8rem;
 }
 /*# sourceMappingURL=22-styles.css.map */

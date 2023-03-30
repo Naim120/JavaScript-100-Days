@@ -34,7 +34,7 @@ function showAddress(position) {
     .then((response) => response.json())
     .then((data) => {
       const address = data.results[0].formatted;
-      addressEl.innerHTML = `<b>Address:</b> ${address}`;
+      addressEl.innerHTML = `<b>Address:</b> <p>${address}</p>`;
     })
     .catch((error) => console.log(error));
 }

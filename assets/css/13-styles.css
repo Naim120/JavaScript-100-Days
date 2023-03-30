@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
   --white: #fff;
-  --blue: #0000ff;
+  --black: #000;
   --bg-color: #d1d1d1;
   --text-color: #e6e6e6;
   --dark-grey: #424242;
@@ -62,7 +62,7 @@ body {
   padding: .8rem 1.5rem;
   border-radius: 0.3rem;
   color: var(--text-color);
-  background: var(--blue);
+  background: var(--black);
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -70,16 +70,24 @@ body {
 
 .getlocation-btn:hover {
   color: var(--text-color);
-  background: var(--blue);
+  background: var(--black);
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.location, .address {
+.address {
+  font-size: 1rem;
+  padding: 0 3rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.location {
   font-size: 1rem;
   font-weight: 300;
+  text-align: center;
   color: var(--dark-grey);
 }
 

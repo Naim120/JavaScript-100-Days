@@ -69,12 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     nextNoteId--;
   });
 
-    // Load the latest note on page reload
-    const latestNoteKey = `noteKey_${nextNoteId - 1}_note_${nextNoteId - 1}`;
-    const latestNote = localStorage.getItem(latestNoteKey);
-    if (latestNote) {
-      const parsedNote = JSON.parse(latestNote);
-      yourNoteTitle.textContent = parsedNote.inputTitle;
-      yourNoteText.textContent = parsedNote.noteText;
-    }
+    // // Load the latest note on page reload
+    // const latestNoteKey = `noteKey_${nextNoteId - 1}_note_${nextNoteId - 1}`;
+    // const latestNote = localStorage.getItem(latestNoteKey);
+    // if (latestNote) {
+    //   const parsedNote = JSON.parse(latestNote);
+    //   yourNoteTitle.textContent = parsedNote.inputTitle;
+    //   yourNoteText.textContent = parsedNote.noteText;
+    // }
 });
