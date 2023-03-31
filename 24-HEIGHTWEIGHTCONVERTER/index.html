@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/24-styles.css" />
+    <title>Height & Weight Converter App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Weight & Height Converter</h1>
+      <p class="instructions">
+        Enter the value in any of the fields to Convert
+      </p>
+      <div class="height_weight">
+        <div class="weight_wrapper">
+          <label for="pounds">Weight in Pounds(lbs)</label>
+          <input
+            type="number"
+            value=""
+            id="lb"
+            class="input lbs"
+            data-unit="lb"
+          />
+          <label for="kgs">Weight in Kilograms(kgs)</label>
+          <input
+            type="number"
+            value=""
+            id="kg"
+            class="input kgs"
+            data-unit="kg"
+          />
+          <label for="grams">Weight in Grams(gms)</label>
+          <input
+            type="number"
+            value=""
+            id="gms"
+            class="input gms"
+            data-unit="gm"
+          />
+          <label for="ounces">Weight in Ounces(oz)</label>
+          <input
+            type="number"
+            value=""
+            id="oz"
+            class="input oz"
+            data-unit="oz"
+          />
+        </div>
+        <div class="height_wrapper">
+          <label for="centimeters">Height in Centimeter(cms)</label>
+          <input type="number" id="cm" class="input cms" data-unit="cm" />
+          <label for="meters">Height in Meter(mtrs)</label>
+          <input type="number" id="m" class="input mtrs" data-unit="m" />
+          <label for="feet">Height in Feet(ft)</label>
+          <input type="number" id="ft" class="input ft" data-unit="ft" />
+          <label for="inches">Height in Inch(in)</label>
+          <input type="number" id="in" class="input in" data-unit="in" />
+        </div>
+      </div>
+      <button class="reset-btn">Reset All</button>
+    </div>
+    <script src="app_weight.js"></script>
+    <script src="app_height.js"></script>
+    <script src="app_reset.js"></script>
+  </body>
+</html>
