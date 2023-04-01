@@ -12,6 +12,10 @@
   --font-family: 'Montserrat Alternates', sans-serif;
 }
 
+html{
+  font-size: 62.5%;
+}
+
 *,
 ::before,
 ::after {
@@ -39,7 +43,7 @@ body {
   @include flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: 30rem;
+  height: 63rem;
   width: 30rem;
   background: var(--trans-grey);
   border-radius: 0.5rem;

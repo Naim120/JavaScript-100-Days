@@ -4,7 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/24-styles.css" />
+    <!-- PWA LINKS -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#ffc0cb" />
+    <meta name="description" content="Weight & Height Converter." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Weight & Height Converter" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Weight & Height Converter"
+    />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="icon.svg" />
+    <link rel="apple-touch-icon" href="icon192.png" />
+    <link rel="apple-touch-icon" href="icon512.png" />
+    <!-- generated during deployment -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="/assets/css/24-styles.css" /> -->
     <title>Height & Weight Converter App</title>
   </head>
   <body>
@@ -15,7 +32,7 @@
       </p>
       <div class="height_weight">
         <div class="weight_wrapper">
-          <label for="pounds">Weight in Pounds(lbs)</label>
+          <label for="pounds">Pounds (lbs)</label>
           <input
             type="number"
             value=""
@@ -23,7 +40,7 @@
             class="input lbs"
             data-unit="lb"
           />
-          <label for="kgs">Weight in Kilograms(kgs)</label>
+          <label for="kgs">Kilograms (kgs)</label>
           <input
             type="number"
             value=""
@@ -31,7 +48,7 @@
             class="input kgs"
             data-unit="kg"
           />
-          <label for="grams">Weight in Grams(gms)</label>
+          <label for="grams">Grams (gms)</label>
           <input
             type="number"
             value=""
@@ -39,7 +56,7 @@
             class="input gms"
             data-unit="gm"
           />
-          <label for="ounces">Weight in Ounces(oz)</label>
+          <label for="ounces">Ounces (oz)</label>
           <input
             type="number"
             value=""
@@ -49,13 +66,13 @@
           />
         </div>
         <div class="height_wrapper">
-          <label for="centimeters">Height in Centimeter(cms)</label>
+          <label for="centimeters">Centimeters (cms)</label>
           <input type="number" id="cm" class="input cms" data-unit="cm" />
-          <label for="meters">Height in Meter(mtrs)</label>
+          <label for="meters">Meters (mtrs)</label>
           <input type="number" id="m" class="input mtrs" data-unit="m" />
-          <label for="feet">Height in Feet(ft)</label>
+          <label for="feet">Feet (ft)</label>
           <input type="number" id="ft" class="input ft" data-unit="ft" />
-          <label for="inches">Height in Inch(in)</label>
+          <label for="inches">Inches (in)</label>
           <input type="number" id="in" class="input in" data-unit="in" />
         </div>
       </div>
