@@ -12,7 +12,7 @@
   --font-family: 'Montserrat Alternates', sans-serif;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -50,17 +50,17 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.title{
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--darker-pink);
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--darker-pink);
 }
 
-.instructions{
-    font-size: .8rem;
-    font-style: italic;
-    margin-top: -1rem;
-    color: var(--dark-pink);
+.instructions {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: -1rem;
+  color: var(--dark-pink);
 }
 
 .height_weight {
@@ -78,7 +78,7 @@ body {
 }
 
 label {
-  font-size: .8rem;
+  font-size: 1rem;
   color: var(--dark-pink);
 }
 
@@ -90,34 +90,36 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
-.input{
-    font-size: 1rem;
-    margin-top: -.8rem;
-    border-radius: .3rem;
-    width: 12rem;
-    font-family: var(--font-family);
-    padding: .5rem;
-    border: .1rem solid var(--darker-pink);
-    box-shadow: var(--box-shadow);
-    color: var(--light-grey);
+.input {
+  font-size: 1.2rem;
+  margin-top: -0.8rem;
+  border-radius: 0.3rem;
+  width: 12rem;
+  font-family: var(--font-family);
+  padding: 0.5rem;
+  border: 0.1rem solid var(--darker-pink);
+  box-shadow: var(--box-shadow);
+  color: var(--light-grey);
 }
 
-.reset-btn{
-    padding: .8rem 2rem;
-    font-size: 1rem;
-    color: var(--white);
-    background-color: var(--darker-pink);
-    border: none;
-    border-radius: .3rem;
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
+.reset-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--darker-pink);
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
 
-    &:active{
-        transform: translateY(.2rem);
-        transition: .15s ease-in-out;
-    }
+  &:active {
+    transform: translateY(.1rem);
+    box-shadow: var(--box-shadow);
+    transition: all 0.15s ease-in-out;
+  }
 }
