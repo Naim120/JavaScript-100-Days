@@ -1,0 +1,93 @@
+:root {
+  --white: #fff;
+  --light-grey: #d4d4d4;
+  --trans-grey: rgba(255, 255, 255, 0.5);
+  --dark-grey: #555555;
+  --bg-color: #476806;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: sans-serif;
+}
+
+.container {
+  height: 35rem;
+  width: 35rem;
+  background: var(--trans-grey);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--white);
+  letter-spacing: .1rem;
+  text-shadow: var(--box-shadow);
+}
+
+.faqs_wrapper {
+  margin: 0 2rem;
+  padding: .5rem;
+  border: .3rem solid yellowgreen;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  background: transparent;
+  overflow: hidden;
+}
+
+details {
+  padding: .5rem 1rem;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+ display: none;
+ content: "";
+}
+
+details[open] > summary::before {
+  content: "-";
+}
+
+summary {
+  position: relative;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--dark-grey);
+  padding: .5rem 0;
+  cursor: pointer;
+
+  &::before{
+    content: "+";
+    padding: 1rem;
+    color: var(--white);
+    // border-radius: 1rem;
+    font-size: 1rem;
+    // background: yellow;
+  }
+}
+
+.q-para {
+  text-align: justify;
+  font-size: .8rem;
+  margin-left: 1rem;
+}

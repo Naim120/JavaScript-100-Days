@@ -1,7 +1,7 @@
 const CACHE_NAME = "weight_height_converter-1";
 const ALL_CACHES = [CACHE_NAME];
 const files = [
-//   "index.php",
+  "index.html",
   "styles.scss",
   "icon.svg",
   "icon192.png",
@@ -52,8 +52,8 @@ self.addEventListener("fetch", (event) => {
   } else {
     event.respondWith(
       caches
-        .match("index.php")
-        .then((response) => response || fetch("index.php"))
+        .match("index.html")
+        .then((response) => response || fetch("index.html"))
     );
   }
 });

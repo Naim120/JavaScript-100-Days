@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(45deg, #ff1b96, #e91e63);
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+canvas {
+  -webkit-box-shadow: 0.5rem -1rem 5rem #fcde7c;
+          box-shadow: 0.5rem -1rem 5rem #fcde7c;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  border: 0.2rem solid silver;
+  height: 90vh;
+  margin-top: 0.5rem;
+}
+/*# sourceMappingURL=25-styles.css.map */
