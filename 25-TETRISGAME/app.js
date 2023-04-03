@@ -5,7 +5,7 @@ context.scale(20, 20);
 
 function arenaSweep() {
   let rowCount = 1;
-  outer: for (let y = arena.length - 1; y > 0; --y) {
+  outer: for (let y = arena.length -1; y > 0; --y) {
     for (let x = 0; x < arena[y].length; ++x) {
       if (arena[y][x] === 0) {
         continue outer;
@@ -92,14 +92,6 @@ function createPiece(type) {
   }
 }
 
-// Draw Function to continue drawing
-function draw() {
-  context.fillStyle = '#000';
-  context.fillRect(0, 0, canvas.height, canvas.width);
-
-  drawMatrix(arena, { x: 0, y: 0 });
-  drawMatrix(player.matrix, player.pos);
-}
 
 function drawMatrix(matrix, offset) {
   matrix.forEach((row, y) => {
@@ -111,6 +103,16 @@ function drawMatrix(matrix, offset) {
     });
   });
 }
+
+// Draw Function to continue drawing
+function draw() {
+  context.fillStyle = '#0a0a0a';
+  context.fillRect(0, 0, canvas.height, canvas.width);
+
+  drawMatrix(arena, { x: 0, y: 0 });
+  drawMatrix(player.matrix, player.pos);
+}
+
 // merge arena and player function
 function merge(arena, player) {
   // to copy all the value from the player into arena at correct pos
@@ -123,6 +125,23 @@ function merge(arena, player) {
     });
   });
 }
+// Rotate Function
+// 1.) Tranpose it - convert all rows into columns
+// 2.) Reverse each row to get rotated Matrix
+function rotate(matrix, dir) {
+  for (let y = 0; y < matrix.length; ++y) {
+    for (let x = 0; x < y; ++x) {
+      [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]];
+    }
+  }
+
+  if (dir > 0) {
+    matrix.forEach((row) => row.reverse());
+  } else {
+    matrix.reverse();
+  }
+}
+
 
 // player Drop function
 function playerDrop() {
@@ -133,6 +152,7 @@ function playerDrop() {
     merge(arena, player);
     playerReset();
     arenaSweep();
+    updateScore();
   }
   dropCounter = 0; // if down pressed, another should not go down as well
 }
@@ -147,13 +167,15 @@ function playerMove(dir) {
 // Player Reset Function
 function playerReset() {
   const pieces = 'ILJOTSZ';
-  player.matrix = createPiece(pieces[(pieces.length * Math.random()) | 0]);
+  player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
   player.pos.y = 0;
   player.pos.x =
-    ((arena[0].length / 2) | 0) - // | 0 and floor
-    ((player.matrix[0].length / 2) | 0);
+    (arena[0].length / 2 | 0) - // | 0 and floor
+    (player.matrix[0].length / 2 | 0);
   if (collide(arena, player)) {
     arena.forEach((row) => row.fill(0));
+    player.score = 0;
+    updateScore();
   }
 }
 
@@ -173,22 +195,6 @@ function playerRotate(dir) {
   }
 }
 
-// Rotate Function
-// 1.) Tranpose it - convert all rows into columns
-// 2.) Reverse each row to get rotated Matrix
-function rotate(matrix, dir) {
-  for (let y = 0; y < matrix.length; ++y) {
-    for (let x = 0; x < y; ++x) {
-      [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]];
-    }
-  }
-
-  if (dir > 0) {
-    matrix.forEach((row) => row.reverse());
-  } else {
-    matrix.reverse();
-  }
-}
 // update function
 let dropCounter = 0;
 let dropInterval = 1000;
@@ -196,20 +202,38 @@ let dropInterval = 1000;
 let lastTime = 0;
 function update(time = 0) {
   const deltaTime = time - lastTime;
-  lastTime = time;
+
 
   dropCounter += deltaTime;
   if (dropCounter > dropInterval) {
     playerDrop();
   }
+  lastTime = time;
   draw();
   requestAnimationFrame(update);
 }
 
 // update score function
-function updatescore(){
-    document.getElementById("score").textContent(`Score: ${player.score}`);
+function updateScore() {
+  const score = document.getElementById('score');
+  score.textContent= `SCORE: ${player.score}`;
 }
+// Keyboard Controls
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    playerMove(-1);
+  } else if (event.key === 'ArrowRight') {
+    playerMove(1);
+  } else if (event.key === 'ArrowDown') {
+    playerDrop();
+    //   for Rotation
+  } else if (event.key === 'q' || event.key === 'Q') {
+    playerRotate(-1);
+  } else if (event.key === 'w' || event.key === 'W') {
+    playerRotate(1);
+  }
+});
+
 
 const colors = [
   null,
@@ -231,21 +255,7 @@ const player = {
   score: 0,
 };
 
-// Keyboard Controls
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'ArrowLeft') {
-    playerMove(-1);
-  } else if (event.key === 'ArrowRight') {
-    playerMove(1);
-  } else if (event.key === 'ArrowDown') {
-    playerDrop();
-    //   for Rotation
-  } else if (event.key === 'q' || event.key === 'Q') {
-    playerRotate(-1);
-  } else if (event.key === 'w' || event.key === 'W') {
-    playerRotate(1);
-  }
-});
 
 playerReset();
+updateScore();
 update();
