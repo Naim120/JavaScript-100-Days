@@ -99,76 +99,51 @@ rbtnFilters.forEach((rbtnFilter) => {
 setRadioButtons(rbtnAll);
 
 // ==================================================================
+
 // Search Filter By Price
 
 // Get all options from select
-const search = document.querySelectorAll('.search-filter option');
+const selects = document.querySelectorAll('.search-filter');
+selects.forEach((select) =>
+  select.addEventListener('change', handleSelectionChange)
+);
 
-// Get the individual option by classNames
-const { selection, optLess50, optLess100, optLess150, optLess200, optLess250 } =
-  {
-    selection: document.querySelector('.selection'),
-    optLess50: document.getElementById('.optLess50'),
-    optLess100: document.getElementById('.optLess100'),
-    optLess150: document.getElementById('.optLess150'),
-    optLess200: document.getElementById('.optLess200'),
-    optLess250: document.getElementById('.optLess250'),
-  };
+function handleSelectionChange(e) {
+    // Destructure the selected value from the event object
+    const { value: dataSelection } = e.target;
+    // const dataSelection = e.target.value;
 
-// Function to set selected state in options
-function setSelectedOption(optSelected) {
-    Object.assign(selection, { selected: optSelected === selection });
-    Object.assign(optLess50, { selected: optSelected === optLess50 });
-    Object.assign(optLess100, { selected: optSelected === optLess100 });
-    Object.assign(optLess150, { selected: optSelected === optLess150 });
-    Object.assign(optLess200, { selected: optSelected === optLess200 });
-    Object.assign(optLess250, { selected: optSelected === optLess250 });
+    // Extract common code into a separate function to reduce duplication
+    function filterByPrice(maxPrice) {
+      return data.filter((item) => {
+        const priceNum = parseFloat(item.price.replace('$', ''));
+        const discountNum = parseFloat(item.discount) / 100;
+        const finalPrice = priceNum * (1 - discountNum);
+        return finalPrice < maxPrice;
+      });
+    }
+
+    // Filter products based on selected option
+    switch (dataSelection) {
+      case 'all':
+        displayProducts();
+        break;
+      case 'less50':
+        displayProducts(filterByPrice(50.0));
+        break;
+      case 'less100':
+        displayProducts(filterByPrice(100.0));
+        break;
+      case 'less150':
+        displayProducts(filterByPrice(150.0));
+        break;
+      case 'less200':
+        displayProducts(filterByPrice(200.0));
+        break;
+      case 'less250':
+        displayProducts(filterByPrice(250.0));
+        break;
+      default: // to do nothing - to handle unexpected values or situations.
+        break;
+    }
   }
-
-// Function to handle selection change event
-function handleSelectionChange(event) {
-  // Get the selected state and value of the clicked option
-  const {
-    selected: isSelected,
-    dataset: { selection },
-  } = event.target;
-
-  // If "selection" is selected show all products
-  if (isSelected && selection === 'filterSelection') {
-    setSelectedOption(selection);
-    displayProducts();
-  }
-  // If "less50" is selected, show only less than 50 products
-  else if (isSelected && selection === 'less50') {
-    setSelectedOption(optLess50);
-    const less50Items = data.filter((item) => {
-      const priceNum = parseFloat(item.price.replace('$', ''));
-      const discountNum = parseFloat(discount) / 100;
-      const finalPrice = priceNum * (1 - discountNum);
-      return finalPrice < 50.0;
-    });
-    displayProducts(less50Items);
-    console.log(displayProducts(less50Items));
-  }
-
-  // If "Dress" is selected, show only dress products
-  else if (isChecked && filterValue === 'dress') {
-    setRadioButtons(rbtnDress);
-    const dressItems = data.filter((item) => item.category === 'Dress');
-    displayProducts(dressItems);
-  }
-  // If "Swimsuit" is selected, show only swimsuit products
-  else if (isChecked && filterValue === 'swimsuit') {
-    setRadioButtons(rbtnSwimsuit);
-    const swimsuitItems = data.filter((item) => item.category === 'Swimsuit');
-    displayProducts(swimsuitItems);
-  }
-}
-
-// Attach the handleFilterChange function to the change event for all radio buttons
-search.forEach((searchFilter) => {
-    searchFilter.addEventListener('change', handleSelectionChange);
-});
-
-// Set the "All" radio button as checked by default
-setSelectedOption(rbtnAll);
