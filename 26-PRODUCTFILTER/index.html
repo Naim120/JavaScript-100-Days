@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/26-styles.css" />
+    <title>Product Filter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Product Filter</h1>
+      <div class="product_search">
+        <select name="search-filter" class="search-filter" id="search">
+          <option
+            class="selection"
+            value="filterSelection"
+            data-selection="filterSelection"
+          >
+            --Select by Price--
+          </option>
+          <option class="optLess50" value="less50" data-selection="less50">
+            Less $50
+          </option>
+          <option class="optLess100" value="less100" data-selection="less100">
+            Less $100
+          </option>
+          <option class="optLess150" value="less150" data-selection="less150">
+            Less $150
+          </option>
+          <option class="optLess200" value="less200" data-selection="less200">
+            Less $200
+          </option>
+          <option class="optLess250" value="less250" data-selection="less250">
+            Less $250
+          </option>
+        </select>
+      </div>
+      <div class="products_wrapper">
+        <form class="form_filters">
+          <div>
+            <input type="radio" id="rbtn-all" value="all" checked />
+            <label for="all">All</label>
+          </div>
+          <div>
+            <input type="radio" id="rbtn-watch" value="watch" />
+            <label for="watch">Watch</label>
+          </div>
+          <div>
+            <input type="radio" id="rbtn-dress" value="dress" />
+            <label for="dress">Dress</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="rbtn-swimsuit"
+              value="swimsuit"
+              data-category="swimsuit"
+            />
+            <label for="swimsuit">Swimsuit</label>
+          </div>
+        </form>
+
+        <main class="main-container">
+          <section class="store_products" id="store_products"></section>
+        </main>
+      </div>
+    </div>
+    <script src="data.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
