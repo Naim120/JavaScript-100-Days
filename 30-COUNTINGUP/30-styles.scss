@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500&display=swap');
+
+:root {
+  --white: #fff;
+  --dark-blue: rgb(92, 28, 165);
+  --light-purple: rgb(222, 195, 236);
+  --box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+  --box-shadow-1: 0.3rem 0.2rem 0.5rem hwb(0 0% 100% / 0.26);
+  --box-shadow-bg: 0 0.8rem 3.2rem hsla(236, 63%, 33%, 0.37);
+  --font: 'Noto Sans', sans-serif;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include flex;
+  min-height: 100vh;
+  background: var(--light-purple);
+  font-family: var(--font);
+}
+
+.container {
+  position: relative;
+  height: 40rem;
+  width: 50rem;
+  padding: 0.5rem;
+  background: var(--white);
+  backdrop-filter: blur(1rem);
+  box-shadow: var(--box-shadow-bg);
+  border: 0.1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.25rem;
+  color: var(--white);
+}
+
+.logo{
+    color: var(--dark-blue);
+    text-shadow: var(--box-shadow-bg);
+}
+
+.header{
+    @include flex;
+    justify-content: space-between;
+    position: fixed;
+    gap: 6rem;
+    height: 5rem;
+    padding: 0 1rem;
+    background: var(white);
+    border-bottom: .1rem solid grey;
+}
+
+.nav-bar{
+    @include flex;
+    gap: .5rem;
+}
+
+a:link, a:active, a:visited{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background: var(--light-purple);
+    color: #4e4e4e;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+
+    &:hover{
+        background: var(--dark-blue);
+        color: var(--white);
+    }
+
+    &:active{
+        transform: translateY(.2rem);
+        transition: .15s ease-in-out;
+    }
+}
+
+#top{
+    @include flex;
+    margin-top: 5rem;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.title, .sub-title{
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    text-align: center;
+}
+
+.sub-title{
+    color: orange;
+}
+.para{
+    font-size: .8rem;
+    color: var(--dark-blue);
+    text-align: center;
+}
+
+.welcome-img{
+    padding: .5rem;
+}
+
+.cont-btn{
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    background: var(--light-purple);
+    color: #4e4e4e;
+    border: none;
+    font-size: 1rem;
+    margin: 1rem 0 0 10rem;
+    cursor: pointer;
+
+    &:hover{
+        background: var(--dark-blue);
+        color: var(--white);
+    }
+
+    &:active{
+        transform: translateY(.2rem);
+        transition: .15s ease-in-out;
+    }
+}
