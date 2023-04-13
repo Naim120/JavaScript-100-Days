@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/31-styles.css" />
+    <title>Form Validation | Password Visibility Toggle</title>
+  </head>
+  <body>
+        <div class="container">
+      <form action="/signup" method="post" id="signup" class="signup-form">
+        <h1>Sign Up</h1>
+        <div class="field">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your fullname"
+          />
+          <small></small>
+        </div>
+        <div class="field">
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+          />
+          <small></small>
+        </div>
+        <div class="field subscribe">
+          <button type="submit" class="quarter">Subscribe</button>
+        </div>
+        <div class="success-msg"></div>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
