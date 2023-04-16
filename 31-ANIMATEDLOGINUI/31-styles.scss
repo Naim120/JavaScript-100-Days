@@ -39,9 +39,10 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.login-cont {
+.login-cont, .register-cont {
   @include flex;
   justify-content: start;
+  gap: 1rem;
 }
 
 .login-form {
@@ -52,20 +53,25 @@ body {
 .login-title {
   position: absolute;
   top: -1rem;
-  left: 55%;
+  left: 9rem;
   transform: translate(-50%);
+}
+
+.register-title{
+  position: relative;
+  left: 7rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 1rem;
-  margin-top: 1.5rem;
+  padding: 0 .5rem;
+  margin-top: .8rem;
 }
 
 .username,
-.password {
+.password, .email {
   padding: .5rem;
   width: 18rem;
   font-size: .8rem;
@@ -74,12 +80,12 @@ form {
   border: .1rem solid var(--grey);
 }
 
-.login-btn{
+.login-btn, .register-btn{
     padding: .5rem 2rem;
-    width: 100%;
+    width: 18rem;
     background: #6969e0;
     border: none;
-    margin: 1.3rem 0;
+    margin: 1.3rem 0 .5rem 0;
     border-radius: .3rem;
     color: var(--white);
     cursor: pointer;
@@ -88,7 +94,6 @@ form {
 a, .noAct-text{
   font-size: .8rem;
   line-height: 1.2rem;
-
 }
 
 a:link{
@@ -98,7 +103,7 @@ a:link{
 
 a{
   color: blue;
-  &:active, :hover{
+  &:active{
     color: var(--red);
   }
 }

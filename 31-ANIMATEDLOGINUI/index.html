@@ -15,7 +15,7 @@
     <section class="main container">
       <div class="wrapper box">
         <!-- Login Section -->
-        <div class="login-cont">
+        <!-- <div class="login-cont">
           <div class="img-cont">
             <img
               src="./freepik-login.jpg"
@@ -49,9 +49,8 @@
                 id="id_password"
               />
               <i
-                class="far fa-eye"
+                class="far fa-eye-slash"
                 id="togglePassword"
-                class="toggle-eye"
                 style="margin-left: 260px; margin-top: -25px; cursor: pointer"
               ></i>
               <button type="submit" class="login-btn btn-primary">Login</button>
@@ -61,7 +60,70 @@
               >
             </form>
           </div>
+        </div> -->
+
+        <!-- Register Section -->
+        <div class="register-cont">
+          <div class="register-form">
+            <h1 class="register-title">Register</h1>
+            <form method="post">
+              <input
+                type="text"
+                name="username"
+                class="username"
+                autofocus=""
+                autocapitalize="none"
+                autocomplete="username"
+                required=""
+                placeholder="Username"
+                id="id_username"
+              />
+
+              <input
+                type="email"
+                name="email"
+                class="email"
+                autofocus=""
+                autocapitalize="none"
+                autocomplete="email"
+                required=""
+                placeholder="Email"
+                id="id_email"
+              />
+
+              <input
+                type="password"
+                name="password"
+                class="password"
+                autocomplete="current-password"
+                required=""
+                placeholder="Password"
+                id="id_password"
+              />
+              <i
+                class="far fa-eye-slash"
+                id="togglePassword"
+                style="margin-left: 260px; margin-top: -25px; cursor: pointer"
+              ></i>
+              <button type="submit" class="register-btn btn-primary">
+                Register
+              </button>
+              <span class="noAct-text"
+                >Have an account? <a href="#">Login</a></span
+              >
+            </form>
+          </div>
+          <div class="img-cont">
+            <img
+              src="./20943830-freepik-register.jpg"
+              height="320px"
+              width="320px"
+              alt="freepik"
+            />
+          </div>
         </div>
+
+        <!-- Forgot Password -->
       </div>
     </section>
     <script src="app.js"></script>
