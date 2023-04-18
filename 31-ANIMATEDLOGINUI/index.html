@@ -15,17 +15,12 @@
     <section class="main container">
       <div class="wrapper box">
         <!-- Login Section -->
-        <!-- <div class="login-cont">
+        <div class="login-cont" name="register">
           <div class="img-cont">
-            <img
-              src="./freepik-login.jpg"
-              height="320px"
-              width="320px"
-              alt="freepik"
-            />
+            <img src="./freepik-login.jpg" alt="freepik" />
           </div>
-          <div class="login-form">
-            <h1 class="login-title">Login</h1>
+          <div class="login-form form">
+            <h1 class="title">Login</h1>
             <form method="post">
               <input
                 type="text"
@@ -38,34 +33,32 @@
                 placeholder="Username"
                 id="id_username"
               />
+              <div class="fontpassword">
+                <input
+                  type="password"
+                  name="password"
+                  class="password"
+                  autocomplete="current-password"
+                  required=""
+                  placeholder="Password"
+                  id="id_password"
+                /><i class="far fa-eye-slash" id="togglePassword"></i>
+              </div>
 
-              <input
-                type="password"
-                name="password"
-                class="password"
-                autocomplete="current-password"
-                required=""
-                placeholder="Password"
-                id="id_password"
-              />
-              <i
-                class="far fa-eye-slash"
-                id="togglePassword"
-                style="margin-left: 260px; margin-top: -25px; cursor: pointer"
-              ></i>
               <button type="submit" class="login-btn btn-primary">Login</button>
               <a href="#" class="forgot-pass">Forgot password?</a>
-              <span class="noAct-text"
-                >Don't have an account? <a href="#">Register</a></span
-              >
+              <p class="noAct-text">
+                Don't have an account?
+                <a href="#" class="register-link">Register</a>
+              </p>
             </form>
           </div>
-        </div> -->
+        </div>
 
         <!-- Register Section -->
         <div class="register-cont">
-          <div class="register-form">
-            <h1 class="register-title">Register</h1>
+          <div class="register-form form">
+            <h1 class="title">Register</h1>
             <form method="post">
               <input
                 type="text"
@@ -76,7 +69,7 @@
                 autocomplete="username"
                 required=""
                 placeholder="Username"
-                id="id_username"
+                id="username"
               />
 
               <input
@@ -98,32 +91,51 @@
                 autocomplete="current-password"
                 required=""
                 placeholder="Password"
-                id="id_password"
+                id="password"
               />
-              <i
-                class="far fa-eye-slash"
-                id="togglePassword"
-                style="margin-left: 260px; margin-top: -25px; cursor: pointer"
-              ></i>
               <button type="submit" class="register-btn btn-primary">
                 Register
               </button>
-              <span class="noAct-text"
-                >Have an account? <a href="#">Login</a></span
-              >
+              <p class="noAct-text"></p>
+                Have an account? <a href="#" class="login-link">Login</a>
+              </p>
             </form>
           </div>
           <div class="img-cont">
-            <img
-              src="./20943830-freepik-register.jpg"
-              height="320px"
-              width="320px"
-              alt="freepik"
-            />
+            <img src="./20943830-freepik-register.jpg" alt="freepik" />
           </div>
         </div>
 
-        <!-- Forgot Password -->
+        <!-- Reset Password -->
+        <!-- <div class="reset-cont" name="reset-pass">
+          <div class="img-cont">
+            <img src="./3275434-freepik-forgotpass.jpg" alt="freepik" />
+          </div>
+          <div class="reset-form form">
+            <button class="close-resetBtn">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h1 class="title">Reset Password</h1>
+            <form method="post">
+              <input
+                type="email"
+                name="email"
+                class="email"
+                autofocus=""
+                autocapitalize="none"
+                autocomplete="email"
+                required=""
+                placeholder="Email"
+                id="id_email"
+              />
+              <button type="submit" class="reset-btn btn-primary">
+                Reset password
+              </button>
+              <span class="noAct-text">We'll send you reset link.</span>
+            </form>
+          </div>
+        </div> -->
+        <!-- End Section -->
       </div>
     </section>
     <script src="app.js"></script>

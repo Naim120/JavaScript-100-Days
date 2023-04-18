@@ -33,79 +33,130 @@ body {
 .container {
   height: 20rem;
   width: 40rem;
-  // padding: 0.5rem 1rem;
   background: var(--light-grey);
-  // border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
 }
 
-.login-cont, .register-cont {
+.login-cont, .register-cont{
+  position: relative;
   @include flex;
   justify-content: start;
-  gap: 1rem;
+  height: 20rem;
+  width: 40rem;
+  // gap: 1rem;
 }
 
-.login-form {
+.form {
   position: relative;
-  @include flex;
+  height: 100%;
+  width: 50%;
+  padding: 2rem;
+  animation: slide-up 0.5s ease;
 }
 
-.login-title {
+.img-cont {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  animation: slide-down 0.5s ease;
+}
+
+img {
   position: absolute;
-  top: -1rem;
-  left: 9rem;
-  transform: translate(-50%);
+  height: 100%;
 }
 
-.register-title{
+@keyframes slide-down {
+  0% {
+    transform: translateY(-20rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.title {
   position: relative;
-  left: 7rem;
+  text-align: center;
+  top: -.5rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 .5rem;
-  margin-top: .8rem;
+.fontpassword{
+  position: relative;
+
+  i{
+    position: absolute;
+    right: .5rem;
+    top: 1.5rem;
+  }
+}
+
+.password{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--grey);
 }
 
 .username,
-.password, .email {
-  padding: .5rem;
-  width: 18rem;
-  font-size: .8rem;
+.email,
+.reset {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 0.8rem;
   margin-top: 1rem;
-  border-radius: .3rem;
-  border: .1rem solid var(--grey);
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--grey);
 }
 
-.login-btn, .register-btn{
-    padding: .5rem 2rem;
-    width: 18rem;
-    background: #6969e0;
-    border: none;
-    margin: 1.3rem 0 .5rem 0;
-    border-radius: .3rem;
-    color: var(--white);
-    cursor: pointer;
+.login-btn,
+.register-btn,
+.reset-btn {
+  padding: 0.5rem 2rem;
+  width: 100%;
+  background: #6969e0;
+  border: none;
+  margin: 1.3rem 0 0.5rem 0;
+  border-radius: 0.3rem;
+  color: var(--white);
+  cursor: pointer;
 }
 
-a, .noAct-text{
-  font-size: .8rem;
+a,
+.noAct-text {
+  font-size: 0.8rem;
   line-height: 1.2rem;
 }
 
-a:link{
+a:link {
   text-decoration: none;
   color: blue;
 }
 
-a{
+a {
   color: blue;
-  &:active{
+  &:active {
     color: var(--red);
   }
 }
 
-
+.close-resetBtn {
+  position: relative;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  top: -2rem;
+  color: var(--dark-grey);
+}

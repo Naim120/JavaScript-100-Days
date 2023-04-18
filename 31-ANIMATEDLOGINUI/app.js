@@ -14,3 +14,15 @@ togglePassword.addEventListener('click', function () {
     this.classList.replace('fa-eye', 'fa-eye-slash');
   }
 });
+
+//Register add event
+const registerCard = document.querySelector('.register-cont');
+const loginCard = document.querySelector('.login-cont');
+const registerLink = document.querySelector('.register-link');
+
+registerLink.addEventListener('click', (e) => {
+    console.log(e);
+    registerCard.classList.add('show-card');
+    loginCard.classList.remove('hide-card');
+})
+
