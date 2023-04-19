@@ -37,21 +37,35 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.login-cont, .register-cont{
+.box {
   position: relative;
-  @include flex;
-  justify-content: start;
+  overflow: hidden;
   height: 20rem;
   width: 40rem;
-  // gap: 1rem;
+  overflow: hidden;
+}
+
+.login-cont,
+.register-cont,
+.reset-cont {
+  position: absolute;
+  @include flex;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
 }
 
 .form {
   position: relative;
   height: 100%;
   width: 50%;
+  margin: 0 auto;
   padding: 2rem;
   animation: slide-up 0.5s ease;
+}
+
+.reset-form {
+  margin-top: 2rem;
 }
 
 .img-cont {
@@ -87,20 +101,21 @@ img {
 .title {
   position: relative;
   text-align: center;
-  top: -.5rem;
+  top: -0.5rem;
 }
 
-.fontpassword{
+.fontpassword {
   position: relative;
 
-  i{
+  i {
     position: absolute;
-    right: .5rem;
+    right: 0.5rem;
     top: 1.5rem;
+    cursor: pointer;
   }
 }
 
-.password{
+.password {
   display: inline-block;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -134,6 +149,13 @@ img {
   cursor: pointer;
 }
 
+.login-btn:active,
+.register-btn:active,
+.reset-btn:active {
+  transform: translateY(0.3rem);
+  box-shadow: var(--box-shadow);
+}
+
 a,
 .noAct-text {
   font-size: 0.8rem;
@@ -156,7 +178,11 @@ a {
   position: relative;
   font-size: 1rem;
   background: none;
-  border: none;
+  border: .1rem solid var(--dark-grey);
   top: -2rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
   color: var(--dark-grey);
+  cursor: pointer;
 }
