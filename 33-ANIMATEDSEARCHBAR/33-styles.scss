@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;600&display=swap');
+
+:root {
+  --offwhite: #dbdbdb;
+  --bg-color: linear-gradient(135deg, #f761a1 10%, #8c1bab 100%);
+  --greenyellow: greenyellow;
+  --light-grey: hwb(0 71% 29% / 0.349);
+  --black: #1a1a1a;
+  --box-shadow: 0 0 .5rem hsla(0, 0%, 0%, 0.3);
+  --font: 'Darker Grotesque', sans-serif;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include flex;
+  min-height: 100vh;
+  background: var(--bg-color);
+  font-family: var(--font);
+}
+
+.container {
+  position: relative;
+  @include flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 30rem;
+  width: 30rem;
+  padding: 0.5rem;
+  background: var(--light-grey);
+  backdrop-filter: blur(1rem);
+  box-shadow: var(--box-shadow-bg);
+  border: 0.1rem solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+}
+
+.title{
+    color: var(--offwhite);
+    letter-spacing: .1rem;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: flex-end;
+    height: 6rem;
+    width: 20rem;
+}
+
+.search-btn {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: transparent;
+    border: .3rem solid var(--offwhite);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+
+    &::after{
+        position: absolute;
+        content: "";
+        height: 1.5rem;
+        width: .3rem;
+        background: var(--offwhite);
+        border-radius: .3rem;
+        transform: translate(1.8rem, 1rem) rotate(-45deg);
+        box-shadow: var(--box-shadow);
+    }
+}
