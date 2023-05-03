@@ -5,14 +5,14 @@
 }
 
 :root {
-  --main-bg: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%);
+  --item-bg: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%);
   --highlight-color: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+  --shadow: 0 0 0.5rem hsla(0, 0%, 0%, 0.3);
   --white: #fff;
   --pink: #f73387;
   --lightpink: #f5aaca;
   --black: #000;
-  --offwhite: #dfdfdf;
-  --lemonchiffon: #fffacd;
+  --lemonchiffon: #f9dd94;
 }
 
 @mixin flex {
@@ -26,10 +26,10 @@ html {
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-height: 100vh;
   line-height: 1.7;
-  background: var(--main-bg);
+  background: var(--item-bg);
 }
 
 // img{
@@ -54,8 +54,8 @@ section {
     content: '';
     position: absolute;
     bottom: 1.6rem;
-    width: 41rem;
-    height: 14px;
+    width: 49rem;
+    height: 1.4rem;
     background: var(--highlight-color);
     z-index: -1;
   }
@@ -79,33 +79,36 @@ form {
   width: 90%;
   max-width: 40rem;
   margin: 2rem auto;
-  background-color: var(--offwhite);
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
 }
 
 input {
   width: 90%;
   padding: 1rem;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   font-size: 2rem;
-  background-color: var(--offwhite);
+  background-color: var(--white);
   display: inline-block;
 }
 
-.search-result {
+.search-results {
   margin-top: 5rem;
   width: 100%;
   display: grid;
   grid-gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
 .item {
   width: 100%;
   padding: 1.5rem;
   overflow: hidden;
-  background-color: var(--lemonchiffon);
+  background: var(--item-bg);
 }
 
 .item-image {
@@ -115,7 +118,8 @@ input {
 }
 
 .content-wrapper {
-  @include flex;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -123,35 +127,77 @@ input {
   color: var(--white);
   margin: 2rem 1rem 0 0;
   padding: 0 1rem;
-  font-size: 2.7rem;
+  font-size: 2rem;
   border-radius: 0.5rem;
   font-weight: 400;
   background-color: var(--pink);
 }
 
-.view-recipe {
+.more-info {
   text-decoration: none;
   text-align: center;
   width: 13rem;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   border: 0.1rem solid var(--pink);
   border-radius: 0.5rem;
   font-size: 1.4rem;
   font-weight: 600;
-  margin-top: 2rem;
-  color: var(--black);
-  box-shadow: 0 0.3rem 0.5rem #000;
+  margin: 2rem 0 0 1rem;
+  color: var(--white);
+  box-shadow: var(--shadow);
+
+  &:hover {
+    background-color: var(--pink);
+  }
 }
 
 .item-data {
   color: var(--black);
   display: block;
-  margin-top: 1rem;
-  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0.05rem;
+}
+
+.ingredients-list {
+  font-size: 1.3rem;
+  margin-left: 1.5rem;
+}
+
+mark {
+  background-color: var(--lightpink);
 }
 
 .recipe-desc {
   padding: 1rem;
   margin: 1rem 0;
+}
+
+@media screen and (max-width: 530px) {
+  .app-title {
+    text-decoration: underline 1rem;
+    text-decoration-color: var(--lemonchiffon);
+    line-height: 5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      background-color: transparent;
+    }
+  }
+
+  .sub-title {
+    margin-top: 2rem;
+  }
+
+  .search-results {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .item-image {
+    height: 260px;
+  }
 }
