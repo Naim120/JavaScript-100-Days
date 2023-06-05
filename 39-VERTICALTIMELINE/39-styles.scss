@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --bg-color: #fefefe;
+  --light-grey: #d6d6d6;
+  --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  --box-shadow-inset: inset -0.1rem 0 0.3rem rgba(0, 0, 0, 0.5);
+  --fontName: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html[data-theme='dark'] {
+  --text-color: #f0efef;
+  --background: #383737;
+  --secondary-bg: #77d4eb;
+  --title-color: #ff0095;
+  --line-bgcolor: #77d4eb;
+  --transition: all 0.15s ease-in-out;
+}
+
+html[data-theme='light'] {
+  --text-color: #383737;
+  --background: #f0efef;
+  --secondary-bg: #03596e;
+  --title-color: #6d6a6a;
+  --line-bgcolor: #ff0095;
+  --transition: all 0.15s ease-in-out;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  @include flex;
+  min-height: 100vh;
+  background: gray;
+  font-family: var(--fontName);
+}
+
+.header {
+  @include flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: #474747;
+  color: white;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.list-contents {
+  width: 100vw;
+  overflow: hidden;
+}
+
+ul {
+  padding: 5rem 0;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  background: red;
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: inherit;
+    transition: all 0.5s ease-in-out;
+  }
+
+  & div {
+    position: relative;
+    width: 40rem;
+    font-size: 1.5rem;
+    bottom: 0;
+    padding: 1.5rem;
+    background: #e7e7e7;
+    border-radius: 3rem 0 3rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  }
+
+  &:nth-child(odd) div {
+    left: 4.4rem;
+    transform: translateX(20rem);
+
+    &::before {
+      left: -20px;
+      border-width: 10px 20px 10px 0;
+      border-color: transparent red transparent transparent;
+    }
+  }
+
+  &:nth-child(even) div {
+    left: -44rem;
+    transform: translateX(-20rem);
+
+    &::before {
+      right: -20px;
+      border-width: 10px 0px 10px 20px;
+      border-color: transparent transparent transparent red;
+    }
+  }
+}
+li.slide-in::after {
+  background: gray;
+  border: 3px solid red;
+}
+
+li.slide-in div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+time {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-decoration: underline 0.5rem red;
+}
+
+//Tablet Device
+@media screen and (max-width: 900px) {
+  li div {
+    width: 25rem;
+  }
+
+  li:nth-child(even) div {
+    left: -289px;
+  }
+}
+
+//Mobile Device
+@media screen and (max-width: 600px) {
+  li {
+    margin-left: 2rem;
+  }
+
+  li div {
+    width: calc(100vw - 91px);
+  }
+
+  li:nth-child(even) div {
+    left: 45px;
+  }
+
+  li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent red transparent transparent;
+  }
+}
