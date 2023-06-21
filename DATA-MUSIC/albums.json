@@ -5,6 +5,7 @@
             "name": "Under the Flow - Vol.1",
             "artist": "Kathrin Klimek",
             "source": "Free Music Archive",
+            "license": "CC BY-NC-ND",
             "albumImg": "album-imgs/1-undertheflow_org.png"
         },
         {
@@ -12,6 +13,7 @@
             "name": "Dance - Relax Music",
             "artist": "Kathrin Klimek",
             "source": "Free Music Archive",
+            "license": "CC BY-NC-SA",
             "albumImg": "album-imgs/2-danceRelaxMusic.jpg"
         },
         {
@@ -19,6 +21,7 @@
             "name": "Cinema - Vol.1",
             "artist": "Kathrin Klimek",
             "source": "Free Music Archive",
+            "license": "CC BY",
             "albumImg": "album-imgs/3-cinemaVol1.jpg"
         },
         {
@@ -26,6 +29,7 @@
             "name": "Cinema - Vol.2",
             "artist": "Kathrin Klimek",
             "source": "Free Music Archive",
+            "license": "CC BY-NC-ND",
             "albumImg": "album-imgs/4-cinemaVol2.jpg"
         }
     ]
