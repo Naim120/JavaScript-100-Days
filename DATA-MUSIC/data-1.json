@@ -12,7 +12,7 @@
       "trackNum": "2",
       "artist": "Kathrin Klimek",
       "songName": "Also Sprach Zarathustra",
-      "audioLink": "album-1/2-KathrinKlimek_AlsoSprachZarathustra",
+      "audioLink": "album-1/2-KathrinKlimek_AlsoSprachZarathustra.mp3",
       "source": "Free Music Archive",
       "license": "CC BY-NC-ND"
     },
@@ -68,7 +68,7 @@
       "trackNum": "9",
       "artist": "Kathrin Klimek",
       "songName": "Bubbel",
-      "audioLink": "album-1/9-KathrinKlimek_Bubble.mp3",
+      "audioLink": "album-1/9-KathrinKlimek_Bubbel.mp3",
       "source": "Free Music Archive",
       "license": "CC BY-NC-ND"
     },
@@ -84,7 +84,7 @@
       "trackNum": "11",
       "artist": "Kathrin Klimek",
       "songName": "Century of Events",
-      "audioLink": "album-1/11KathrinKlimek_CenturyofEvents.mp3",
+      "audioLink": "album-1/11-KathrinKlimek_CenturyofEvents.mp3",
       "source": "Free Music Archive",
       "license": "CC BY-NC-ND"
     },
@@ -179,15 +179,15 @@
     {
       "trackNum": "23",
       "artist": "Kathrin Klimek",
-      "songName": "A Little More of Django",
-      "audioLink": "album-1/23-KathrinKlimek_ALittleMoreofDjango.mp3",
+      "songName": "A Little More Of Django",
+      "audioLink": "album-1/23-KathrinKlimek_ALittleMoreOfDjango.mp3",
       "source": "Free Music Archive",
       "license": "CC BY-NC-ND"
     },
     {
       "trackNum": "24",
       "artist": "Kathrin Klimek",
-      "songName": "A Litte Ska",
+      "songName": "A Little Ska",
       "audioLink": "album-1/24-KathrinKlimek_ALittleSka.mp3",
       "source": "Free Music Archive",
       "license": "CC BY-NC-ND"
