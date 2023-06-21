@@ -1,0 +1,32 @@
+{
+    "albums": [
+        {
+            "id": "album1",
+            "name": "Under the Flow - Vol.1",
+            "artist": "Kathrin Klimek",
+            "source": "Free Music Archive",
+            "albumImg": "album-imgs/1-undertheflow_org.png"
+        },
+        {
+            "id": "album2",
+            "name": "Dance - Relax Music",
+            "artist": "Kathrin Klimek",
+            "source": "Free Music Archive",
+            "albumImg": "album-imgs/2-danceRelaxMusic.jpg"
+        },
+        {
+            "id": "album3",
+            "name": "Cinema - Vol.1",
+            "artist": "Kathrin Klimek",
+            "source": "Free Music Archive",
+            "albumImg": "album-imgs/3-cinemaVol1.jpg"
+        },
+        {
+            "id": "album4",
+            "name": "Cinema - Vol.2",
+            "artist": "Kathrin Klimek",
+            "source": "Free Music Archive",
+            "albumImg": "album-imgs/4-cinemaVol2.jpg"
+        }
+    ]
+}
