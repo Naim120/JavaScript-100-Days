@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7d534dd6bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/assets/css/40-styles.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <section class="container music-box">
+      <div class="music">
+        <!-- Music Player -->
+        <div class="music-player">
+          <!-- Header -->
+          <div class="main-header">
+            <img class="logo_img" src="./images/logo.jpg" alt="logo" />
+            <!-- <i class="fa-solid fa-music"></i> -->
+            <h2 class="header-title">Music Player</h2>
+            <button class="menu-btn">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- Album Details -->
+          <div class="album-details">
+            <div class="image">
+              <img
+                class="album_img"
+                src="https://raw.githubusercontent.com/eloi700/JavaScript-100-Days/main/DATA-MUSIC/album-imgs/album2.jpg"
+                alt="Default Album Image"
+                loading="eager"
+              />
+            </div>
+            <div class="title-and-author">
+              <p class="album_title">Dance - Relax Music</p>
+              <p class="artist">Kathrin Klimek</p>
+            </div>
+          </div>
+          <div class="running-song-title">Yinghua</div>
+        </div>
+
+        <div>
+          <!-- Player Controls -->
+          <div class="player_controls">
+            <p class="track_playing"></p>
+
+            <div class="audio">
+              <audio
+                src="https://raw.githubusercontent.com/eloi700/JavaScript-100-Days/main/DATA-MUSIC/album-2/1.mp3"
+                controls
+                controlsList="nodownload noplaybackrate"
+              ></audio>
+            </div>
+            <div class="addl-controls">
+              <button class="prev btn">
+                <i class="fa-solid fa-backward"></i>
+              </button>
+              <button class="shuffle btn">
+                <i class="fa-solid fa-shuffle"></i>
+              </button>
+              <button class="next btn">
+                <i class="fa-solid fa-forward"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="footer">
+            <p class="source_name">Source: Free Music Archive - FMA</p>
+            <p class="license_number">License: CC BY-NC-ND</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
