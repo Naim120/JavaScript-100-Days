@@ -31,6 +31,14 @@
             "source": "Free Music Archive",
             "license": "CC BY-NC-ND",
             "albumImg": "album-imgs/album4.jpg"
+        },
+        {
+            "id": "album5",
+            "name": "Paradise King",
+            "artist": "Kathrin Klimek",
+            "source": "Free Music Archive",
+            "license": "CC BY-NC-ND",
+            "albumImg": "album-imgs/album5.jpg"
         }
     ]
 }
